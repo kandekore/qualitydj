@@ -1,0 +1,272 @@
+.admin {
+  padding: 8rem 2rem 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.admin__header {
+  margin-bottom: 2rem;
+}
+
+.admin__header h1 {
+  margin-bottom: 0.3rem;
+}
+
+.admin__header p {
+  color: #7a6b5d;
+}
+
+.admin__tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--color-trim);
+  margin-bottom: 2rem;
+}
+
+.admin__tab {
+  padding: 0.8rem 1.5rem;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7a6b5d;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.3s ease;
+}
+
+.admin__tab:hover {
+  color: var(--color-primary);
+}
+
+.admin__tab--active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.admin__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.admin__stat {
+  background: var(--color-white);
+  border: 1px solid var(--color-trim);
+  padding: 2rem;
+  text-align: center;
+}
+
+.admin__stat-number {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.admin__stat-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7a6b5d;
+}
+
+.admin__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.admin__grid h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.admin__item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--color-trim);
+  font-size: 0.85rem;
+}
+
+.admin__item strong {
+  color: var(--color-primary);
+}
+
+.admin__item span {
+  color: #7a6b5d;
+  font-size: 0.8rem;
+}
+
+.admin__item-date {
+  font-size: 0.75rem;
+}
+
+.admin__search {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  border: 1px solid var(--color-trim);
+  background: var(--color-white);
+  color: var(--color-text);
+  outline: none;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.admin__search:focus {
+  border-color: var(--color-accent);
+}
+
+.admin__card {
+  background: var(--color-white);
+  border: 1px solid var(--color-trim);
+  margin-bottom: 1rem;
+}
+
+.admin__card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.admin__card-header:hover {
+  background: rgba(0,0,0,0.02);
+}
+
+.admin__card-header strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-primary);
+}
+
+.admin__card-meta {
+  font-size: 0.78rem;
+  color: #7a6b5d;
+}
+
+.admin__card-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin__card-body {
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid var(--color-trim);
+}
+
+.admin__card-body p {
+  font-size: 0.85rem;
+}
+
+.admin__card-body h4 {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 1rem 0 0.8rem;
+}
+
+.admin__badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+}
+
+.admin__badge--spotify {
+  background: #1DB954;
+  color: white;
+}
+
+.admin__expand {
+  font-size: 1.2rem;
+  color: #7a6b5d;
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.admin__playlist {
+  border: 1px solid var(--color-trim);
+  margin-top: 0.5rem;
+}
+
+.admin__playlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.admin__playlist-header:hover {
+  background: rgba(0,0,0,0.02);
+}
+
+.admin__tracks {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.admin__tracks th {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  background: var(--color-background);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7a6b5d;
+}
+
+.admin__tracks td {
+  padding: 0.4rem 1rem;
+  border-top: 1px solid var(--color-trim);
+  color: #5a4d42;
+}
+
+.admin__muted {
+  color: #7a6b5d;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.admin__loading {
+  text-align: center;
+  color: #7a6b5d;
+  padding: 3rem;
+}
+
+@media (max-width: 768px) {
+  .admin__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin__tabs {
+    overflow-x: auto;
+  }
+}

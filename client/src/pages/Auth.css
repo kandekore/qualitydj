@@ -1,0 +1,152 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem 4rem;
+  background: var(--color-background);
+}
+
+.auth-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-trim);
+  padding: 3rem;
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+}
+
+.auth-card--wide {
+  max-width: 600px;
+}
+
+.auth-card h2 {
+  margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+  color: #7a6b5d;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.auth-error {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+  padding: 0.8rem;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.auth-field {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.auth-field label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+}
+
+.auth-field input {
+  width: 100%;
+  padding: 11px 14px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  border: 1px solid var(--color-trim);
+  background: var(--color-background);
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.auth-field input:focus {
+  border-color: var(--color-accent);
+}
+
+.auth-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.auth-submit {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.auth-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-trim);
+}
+
+.auth-divider span {
+  font-size: 0.8rem;
+  color: #7a6b5d;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.auth-spotify-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  background: #1DB954;
+  color: white;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.auth-spotify-btn:hover {
+  background: #1ed760;
+}
+
+.auth-switch {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: #7a6b5d;
+}
+
+.auth-switch a {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .auth-row {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-card {
+    padding: 2rem;
+  }
+}
