@@ -126,26 +126,77 @@ function ClientsTab() {
   );
 }
 
+function formatDuration(ms) {
+  if (!ms) return '';
+  const mins = Math.floor(ms / 60000);
+  const secs = Math.floor((ms % 60000) / 1000).toString().padStart(2, '0');
+  return `${mins}:${secs}`;
+}
+
 function PlaylistCard({ playlist }) {
   const [open, setOpen] = useState(false);
+  const tracks = playlist.tracks || [];
+
+  const handleExport = (e) => {
+    e.stopPropagation();
+    fetch(`${API_URL}/admin/export/playlist/${playlist._id}`, {
+      headers: { Authorization: `Bearer ${getToken()}` },
+    })
+      .then((res) => res.blob())
+      .then((blob) => {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${playlist.playlistName.replace(/[^a-zA-Z0-9 -]/g, '').trim()}.csv`;
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+  };
+
   return (
     <div className="admin__playlist">
       <div className="admin__playlist-header" onClick={() => setOpen(!open)}>
         <span>{playlist.playlistName}</span>
-        <span className="admin__card-meta">{playlist.tracks.length} tracks | {new Date(playlist.createdAt).toLocaleDateString()}</span>
+        <span className="admin__card-meta">
+          {tracks.length} tracks | {new Date(playlist.createdAt).toLocaleDateString()}
+          {playlist.spotifyUrl && (
+            <> | <a href={playlist.spotifyUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>Open in Spotify</a></>
+          )}
+          {tracks.length > 0 && (
+            <> | <a href="#" onClick={handleExport}>Export CSV</a></>
+          )}
+        </span>
         <span className="admin__expand">{open ? '−' : '+'}</span>
       </div>
       {open && (
-        <table className="admin__tracks">
-          <thead>
-            <tr><th>Track</th><th>Artist</th><th>Album</th></tr>
-          </thead>
-          <tbody>
-            {playlist.tracks.map((t, i) => (
-              <tr key={i}><td>{t.name}</td><td>{t.artist}</td><td>{t.album}</td></tr>
-            ))}
-          </tbody>
-        </table>
+        <>
+          {tracks.length > 0 && (
+            <table className="admin__tracks">
+              <thead>
+                <tr><th>#</th><th>Track</th><th>Artist</th><th>Duration</th></tr>
+              </thead>
+              <tbody>
+                {tracks.map((t, i) => (
+                  <tr key={i}><td>{i + 1}</td><td>{t.name}</td><td>{t.artist}</td><td>{formatDuration(t.duration)}</td></tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+          {playlist.embedUrl && (
+            <div style={{ padding: '1rem 0' }}>
+              <iframe
+                src={playlist.embedUrl}
+                width="100%"
+                height="352"
+                frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                title={playlist.playlistName}
+                style={{ borderRadius: '12px' }}
+              />
+            </div>
+          )}
+        </>
       )}
     </div>
   );
@@ -178,7 +229,7 @@ function PlaylistsTab() {
                 by {pl.userName || pl.userId?.name || 'Unknown'} ({pl.userEmail || pl.userId?.email || ''})
               </span>
             </div>
-            <span className="admin__card-meta">{pl.tracks.length} tracks</span>
+            <span className="admin__card-meta">{pl.tracks?.length || 0} tracks | {new Date(pl.createdAt).toLocaleDateString()}</span>
           </div>
           <PlaylistCard playlist={pl} />
         </div>

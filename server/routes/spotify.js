@@ -1,157 +1,134 @@
 const express = require('express');
 const router = express.Router();
 const Playlist = require('../models/Playlist');
-const User = require('../models/User');
-const { generateToken, protect } = require('../middleware/auth');
+const { protect } = require('../middleware/auth');
 
-const SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
-const SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
-const SPOTIFY_REDIRECT_URI = process.env.SPOTIFY_REDIRECT_URI || 'http://localhost:5000/api/spotify/callback';
-const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:5173';
+// Extract Spotify playlist ID from various URL formats
+function extractPlaylistId(input) {
+  const trimmed = input.trim();
+  // Direct ID (no slashes or dots)
+  if (/^[a-zA-Z0-9]{22}$/.test(trimmed)) return trimmed;
+  // URL formats: open.spotify.com/playlist/ID or spotify:playlist:ID
+  const urlMatch = trimmed.match(/playlist[/:]([a-zA-Z0-9]{22})/);
+  return urlMatch ? urlMatch[1] : null;
+}
 
-// Step 1: Redirect to Spotify authorization
-router.get('/login', (req, res) => {
-  const scopes = 'playlist-read-private playlist-read-collaborative user-read-email';
-  const state = req.query.link_token || '';
-  const params = new URLSearchParams({
-    response_type: 'code',
-    client_id: SPOTIFY_CLIENT_ID,
-    scope: scopes,
-    redirect_uri: SPOTIFY_REDIRECT_URI,
-    state,
-  });
-  res.redirect(`https://accounts.spotify.com/authorize?${params.toString()}`);
-});
+// Fetch playlist metadata and tracks from Spotify embed page (public, no auth needed)
+async function fetchPlaylistData(playlistId) {
+  // Get metadata from oEmbed
+  const oembedRes = await fetch(`https://open.spotify.com/oembed?url=https://open.spotify.com/playlist/${playlistId}`);
+  if (!oembedRes.ok) return null;
+  const oembed = await oembedRes.json();
 
-// Step 2: Handle callback from Spotify
-router.get('/callback', async (req, res) => {
-  const { code, error, state } = req.query;
-
-  if (error) {
-    return res.redirect(`${CLIENT_URL}/spotify-playlist?error=${error}`);
-  }
-
+  // Get track data from embed page
+  let tracks = [];
   try {
-    const tokenRes = await fetch('https://accounts.spotify.com/api/token', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        Authorization: `Basic ${Buffer.from(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`).toString('base64')}`,
-      },
-      body: new URLSearchParams({
-        grant_type: 'authorization_code',
-        code,
-        redirect_uri: SPOTIFY_REDIRECT_URI,
-      }),
-    });
-
-    const tokenData = await tokenRes.json();
-
-    if (tokenData.error) {
-      return res.redirect(`${CLIENT_URL}/spotify-playlist?error=token_error`);
-    }
-
-    // Get Spotify user profile
-    const profileRes = await fetch('https://api.spotify.com/v1/me', {
-      headers: { Authorization: `Bearer ${tokenData.access_token}` },
-    });
-    const profile = await profileRes.json();
-
-    // If we have a link_token (state), link Spotify to existing account
-    if (state) {
-      try {
-        const jwt = require('jsonwebtoken');
-        const decoded = jwt.verify(state, process.env.JWT_SECRET || 'qualitydj-secret-change-in-production');
-        const user = await User.findById(decoded.id);
-        if (user) {
-          user.spotifyId = profile.id;
-          user.spotifyDisplayName = profile.display_name;
-          user.spotifyEmail = profile.email;
-          await user.save();
-          return res.redirect(`${CLIENT_URL}/spotify-playlist?spotify_token=${tokenData.access_token}&linked=true`);
-        }
-      } catch {
-        // Invalid link token, continue with normal flow
+    const embedRes = await fetch(`https://open.spotify.com/embed/playlist/${playlistId}`);
+    if (embedRes.ok) {
+      const html = await embedRes.text();
+      const match = html.match(/<script id="__NEXT_DATA__"[^>]*>([^<]+)<\/script>/);
+      if (match) {
+        const data = JSON.parse(match[1]);
+        const trackList = data?.props?.pageProps?.state?.data?.entity?.trackList || [];
+        tracks = trackList
+          .filter((t) => t.title)
+          .map((t) => ({
+            name: t.title,
+            artist: (t.subtitle || 'Unknown').replace(/\u00a0/g, ' '),
+            duration: t.duration || 0,
+          }));
       }
     }
-
-    // Check if user exists by Spotify ID or email
-    let user = await User.findOne({ spotifyId: profile.id });
-
-    if (!user && profile.email) {
-      user = await User.findOne({ email: profile.email.toLowerCase() });
-      if (user) {
-        user.spotifyId = profile.id;
-        user.spotifyDisplayName = profile.display_name;
-        user.spotifyEmail = profile.email;
-        await user.save();
-      }
-    }
-
-    if (!user) {
-      user = await User.create({
-        name: profile.display_name || 'Spotify User',
-        email: profile.email || `spotify_${profile.id}@placeholder.local`,
-        spotifyId: profile.id,
-        spotifyDisplayName: profile.display_name,
-        spotifyEmail: profile.email,
-      });
-    }
-
-    const appToken = generateToken(user);
-
-    res.redirect(
-      `${CLIENT_URL}/spotify-playlist?spotify_token=${tokenData.access_token}&app_token=${appToken}`
-    );
   } catch (err) {
-    console.error('Spotify callback error:', err);
-    res.redirect(`${CLIENT_URL}/spotify-playlist?error=server_error`);
+    console.error('Track extraction error:', err.message);
   }
-});
 
-// Step 3: Submit selected playlists (requires auth)
+  return {
+    title: oembed.title,
+    thumbnailUrl: oembed.thumbnail_url,
+    embedUrl: `https://open.spotify.com/embed/playlist/${playlistId}`,
+    spotifyUrl: `https://open.spotify.com/playlist/${playlistId}`,
+    tracks,
+  };
+}
+
+// Submit playlist links (requires auth)
 router.post('/submit-playlists', protect, async (req, res) => {
   try {
-    const { token, playlistIds } = req.body;
+    const { links } = req.body;
 
-    if (!token || !playlistIds || playlistIds.length === 0) {
-      return res.status(400).json({ error: 'Token and playlist IDs are required.' });
+    if (!links || !Array.isArray(links) || links.length === 0) {
+      return res.status(400).json({ error: 'At least one playlist link is required.' });
     }
 
-    const savedPlaylists = [];
+    if (links.length > 20) {
+      return res.status(400).json({ error: 'Maximum 20 playlists at a time.' });
+    }
 
-    for (const playlistId of playlistIds) {
-      const plRes = await fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+    const saved = [];
+    const errors = [];
 
-      if (!plRes.ok) continue;
+    for (const link of links) {
+      const playlistId = extractPlaylistId(link);
+      if (!playlistId) {
+        errors.push({ link, reason: 'Invalid Spotify playlist link' });
+        continue;
+      }
 
-      const plData = await plRes.json();
+      // Check if already submitted by this user
+      const existing = await Playlist.findOne({ spotifyPlaylistId: playlistId, userId: req.user._id });
+      if (existing) {
+        errors.push({ link, reason: 'Already submitted' });
+        continue;
+      }
 
-      const tracks = (plData.tracks?.items || [])
-        .filter((item) => item.track)
-        .map((item) => ({
-          name: item.track.name,
-          artist: item.track.artists?.map((a) => a.name).join(', ') || 'Unknown',
-          album: item.track.album?.name || 'Unknown',
-        }));
+      const data = await fetchPlaylistData(playlistId);
+      if (!data) {
+        errors.push({ link, reason: 'Could not fetch playlist — is it public?' });
+        continue;
+      }
 
       const playlist = await Playlist.create({
         spotifyPlaylistId: playlistId,
-        playlistName: plData.name,
+        playlistName: data.title,
+        thumbnailUrl: data.thumbnailUrl,
+        spotifyUrl: data.spotifyUrl,
+        embedUrl: data.embedUrl,
+        tracks: data.tracks,
         userId: req.user._id,
         userName: req.user.name,
         userEmail: req.user.email,
-        tracks,
       });
 
-      savedPlaylists.push(playlist);
+      saved.push(playlist);
     }
 
-    res.json({ success: true, count: savedPlaylists.length });
+    res.json({ success: true, saved, errors });
   } catch (err) {
     console.error('Playlist submit error:', err);
+    res.status(500).json({ error: 'Server error.' });
+  }
+});
+
+// Get user's submitted playlists (requires auth)
+router.get('/my-playlists', protect, async (req, res) => {
+  try {
+    const playlists = await Playlist.find({ userId: req.user._id }).sort({ createdAt: -1 });
+    res.json({ playlists });
+  } catch (err) {
+    console.error('Fetch playlists error:', err);
+    res.status(500).json({ error: 'Server error.' });
+  }
+});
+
+// Delete a submitted playlist (requires auth)
+router.delete('/playlist/:id', protect, async (req, res) => {
+  try {
+    const playlist = await Playlist.findOneAndDelete({ _id: req.params.id, userId: req.user._id });
+    if (!playlist) return res.status(404).json({ error: 'Playlist not found.' });
+    res.json({ success: true });
+  } catch (err) {
+    console.error('Delete playlist error:', err);
     res.status(500).json({ error: 'Server error.' });
   }
 });

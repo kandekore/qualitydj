@@ -29,9 +29,14 @@
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.spotify__login-btn:hover {
+.spotify__login-btn:hover:not(:disabled) {
   background: #1ed760;
   transform: scale(1.02);
+}
+
+.spotify__login-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .spotify__content {
@@ -39,130 +44,132 @@
   margin: 0 auto;
 }
 
-.spotify__header {
+.spotify__form {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 1rem;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
 }
 
-.spotify__user {
-  color: #7a6b5d;
-  font-size: 0.85rem;
+.spotify__textarea {
+  width: 100%;
+  padding: 1rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  border: 2px solid var(--color-trim);
+  border-radius: 8px;
+  resize: vertical;
+  transition: border-color 0.3s ease;
 }
 
-.spotify__instructions {
-  color: #7a6b5d;
+.spotify__textarea:focus {
+  outline: none;
+  border-color: #1DB954;
+}
+
+.spotify__textarea::placeholder {
+  color: #b0a89e;
+}
+
+.spotify__playlist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   margin-bottom: 2rem;
 }
 
-.spotify__empty {
-  text-align: center;
-  color: #7a6b5d;
-  padding: 3rem;
-}
-
-.spotify__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1.5rem;
-}
-
-.spotify__card {
-  background: var(--color-white);
-  border: 2px solid var(--color-trim);
-  padding: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: center;
-}
-
-.spotify__card:hover {
-  border-color: var(--color-accent);
-  transform: translateY(-2px);
-}
-
-.spotify__card--selected {
-  border-color: #1DB954;
-  box-shadow: 0 0 0 1px #1DB954;
-}
-
-.spotify__card-img {
-  position: relative;
-  aspect-ratio: 1;
-  overflow: hidden;
-  margin-bottom: 0.8rem;
-  background: var(--color-trim);
-}
-
-.spotify__card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.spotify__card-placeholder {
-  width: 100%;
-  height: 100%;
-  background: var(--color-secondary);
-}
-
-.spotify__card-check {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 28px;
-  height: 28px;
-  background: #1DB954;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  font-weight: bold;
-}
-
-.spotify__card h4 {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 500;
-  margin-bottom: 0.3rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.spotify__card p {
-  font-size: 0.75rem;
-  color: #7a6b5d;
-  margin: 0;
-}
-
-.spotify__submit {
+.spotify__playlist-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 2rem;
-  padding: 1.5rem 2rem;
+  padding: 1rem 1.5rem;
   background: var(--color-white);
   border: 1px solid var(--color-trim);
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
 }
 
-.spotify__submit p {
-  margin: 0;
+.spotify__playlist-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.spotify__playlist-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.spotify__playlist-thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.spotify__playlist-info h4 {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
   font-weight: 500;
-  font-size: 0.9rem;
+  margin: 0 0 0.25rem;
+}
+
+.spotify__playlist-meta {
+  display: block;
+  font-size: 0.8rem;
+  color: #7a6b5d;
+  margin-bottom: 0.15rem;
+}
+
+.spotify__playlist-link {
+  font-size: 0.8rem;
+  color: #1DB954;
+  text-decoration: none;
+}
+
+.spotify__playlist-link:hover {
+  text-decoration: underline;
+}
+
+.spotify__delete-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #999;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.spotify__delete-btn:hover {
+  color: #e74c3c;
+}
+
+.spotify__embeds {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.spotify__embed-wrap {
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
-  .spotify__grid {
-    grid-template-columns: repeat(2, 1fr);
+  .spotify__embeds {
+    grid-template-columns: 1fr;
   }
 
-  .spotify__submit {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
+  .spotify__playlist-item {
+    padding: 0.8rem 1rem;
+  }
+
+  .spotify__playlist-thumb {
+    width: 44px;
+    height: 44px;
   }
 }

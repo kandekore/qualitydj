@@ -62,17 +62,11 @@ export function AuthProvider({ children }) {
 
   const logout = () => {
     localStorage.removeItem('token');
-    sessionStorage.removeItem('spotify_token');
     setUser(null);
   };
 
-  const loginWithAppToken = (token, userData) => {
-    localStorage.setItem('token', token);
-    setUser(userData);
-  };
-
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout, loginWithAppToken }}>
+    <AuthContext.Provider value={{ user, loading, login, register, logout }}>
       {children}
     </AuthContext.Provider>
   );

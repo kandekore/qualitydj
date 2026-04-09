@@ -79,4 +79,31 @@ router.get('/dashboard', async (req, res) => {
   }
 });
 
+// Export a single playlist as CSV (compatible with Soundiiz/TuneMyMusic for Tidal import)
+router.get('/export/playlist/:id', async (req, res) => {
+  try {
+    const playlist = await Playlist.findById(req.params.id);
+    if (!playlist) return res.status(404).json({ error: 'Playlist not found.' });
+
+    const escCsv = (val) => {
+      const s = String(val ?? '');
+      return s.includes(',') || s.includes('"') || s.includes('\n') ? `"${s.replace(/"/g, '""')}"` : s;
+    };
+
+    const tracks = playlist.tracks || [];
+    const rows = ['Track Name,Artist,Duration'];
+    for (const t of tracks) {
+      const mins = t.duration ? `${Math.floor(t.duration / 60000)}:${Math.floor((t.duration % 60000) / 1000).toString().padStart(2, '0')}` : '';
+      rows.push([t.name, t.artist, mins].map(escCsv).join(','));
+    }
+
+    const safeName = playlist.playlistName.replace(/[^a-zA-Z0-9-_ ]/g, '').trim().replace(/\s+/g, '-');
+    res.setHeader('Content-Type', 'text/csv');
+    res.setHeader('Content-Disposition', `attachment; filename=${safeName}.csv`);
+    res.send(rows.join('\n'));
+  } catch (err) {
+    res.status(500).json({ error: 'Server error.' });
+  }
+});
+
 module.exports = router;
