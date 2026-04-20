@@ -172,6 +172,7 @@ img {
   text-align: center;
   overflow: hidden;
   padding-top: var(--header-height);
+  padding-bottom: 15px;
 }
 
 .page-hero__overlay {

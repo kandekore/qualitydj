@@ -7,6 +7,11 @@ import Home from './pages/Home';
 import About from './pages/About';
 import DJServices from './pages/DJServices';
 import LightingExtras from './pages/LightingExtras';
+import SoundSystem from './pages/SoundSystem';
+import WeddingDJPackages from './pages/WeddingDJPackages';
+import RealWeddings from './pages/RealWeddings';
+import RealWedding from './pages/RealWedding';
+import FAQ from './pages/FAQ';
 import Testimonials from './pages/Testimonials';
 import Contact from './pages/Contact';
 import ExclusiveVenues from './pages/ExclusiveVenues';
@@ -34,7 +39,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<About />} />
             <Route path="/dj-services" element={<DJServices />} />
+            <Route path="/sound-system" element={<SoundSystem />} />
             <Route path="/lighting-extras" element={<LightingExtras />} />
+            <Route path="/wedding-dj-packages" element={<WeddingDJPackages />} />
+            <Route path="/real-weddings" element={<RealWeddings />} />
+            <Route path="/real-weddings/:slug" element={<RealWedding />} />
+            <Route path="/faq" element={<FAQ />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/contact-us" element={<Contact />} />
             <Route path="/exclusive-venues" element={<ExclusiveVenues />} />

@@ -90,6 +90,8 @@
 
 .installation__image {
   overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(74, 59, 48, 0.18);
 }
 
 .installation__image img {
@@ -97,6 +99,7 @@
   height: 600px;
   object-fit: cover;
   transition: transform 0.8s ease;
+  display: block;
 }
 
 .installation__image:hover img {

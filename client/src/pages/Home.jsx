@@ -11,14 +11,17 @@ import './Home.css';
 const slides = [
   {
     video: '/assets/videos/freecompress-castle2-1.mp4',
+    poster: '/assets/images/gallery-castle-party.jpg',
     slogan: 'Elevate Your Wedding with Elegance',
   },
   {
     video: '/assets/videos/freecompress-tent2-3.mp4',
+    poster: '/assets/images/gallery-white-tent-setup.jpg',
     slogan: 'Ready for a Night to Remember?',
   },
   {
     video: '/assets/videos/freecompress-conga2.mp4',
+    poster: '/assets/images/gallery-bride-dancing.jpg',
     slogan: 'Dance into Luxury with Us',
   },
 ];
@@ -26,10 +29,10 @@ const slides = [
 const services = [
   {
     title: 'Premium Sound Systems',
-    desc: 'Crystal-clear sound tailored to your venue, your guests, and every moment of your day. Balanced, powerful audio without harshness or distortion.',
+    desc: 'Crystal-clear Electro-Voice systems tailored to your venue. Full-range stacks, wireless columns, battery-powered speakers and Shure radio mics — the right kit for every moment of your day.',
     bullets: [
-      'Professionally calibrated for speeches & music',
-      'Appropriate volume control throughout the day',
+      'EV Evolve 50 & Everse 12 wireless speakers',
+      'EKX-18 subwoofers for a polished low end',
       'Full backup systems for total peace of mind',
     ],
     icon: (
@@ -118,15 +121,40 @@ const galleryItems = [
   { img: '/assets/images/gallery-laser-red.jpg', title: 'Laser Show' },
   { img: '/assets/images/gallery-sax-player.jpg', title: 'Saxy Vibes' },
   { img: '/assets/images/gallery-castle-party.jpg', title: 'Castle Party' },
+  { img: '/assets/images/adobe/adobestock_1841384988.webp', title: 'Love Is Love' },
   { img: '/assets/images/gallery-white-tent-setup.jpg', title: 'White Setup' },
   { img: '/assets/images/gallery-rustic-setup.jpg', title: 'Rustic Booth' },
+  { img: '/assets/images/adobe/adobestock_226243526.webp', title: 'Dry Ice Magic' },
   { img: '/assets/images/gallery-bride-dancing.jpg', title: 'Bride Boogie' },
   { img: '/assets/images/gallery-green-lasers.jpg', title: 'Green Lasers' },
+  { img: '/assets/images/adobe/adobestock_417571252.webp', title: 'Cold Sparks' },
   { img: '/assets/images/gallery-blue-lasers.jpg', title: 'Blue Lasers' },
   { img: '/assets/images/gallery-hotel-setup.jpg', title: 'Hotel Setup' },
   { img: '/assets/images/gallery-first-dance.jpg', title: 'First Dance' },
+  { img: '/assets/images/adobe/adobestock_1966018059.webp', title: 'Two Grooms' },
   { img: '/assets/images/gallery-tent-party.jpg', title: 'Summer Tent' },
   { img: '/assets/images/gallery-saxy-vibes.jpg', title: 'Saxy Performance' },
+];
+
+const signatureMoments = [
+  {
+    img: '/assets/images/adobe/adobestock_137506782.webp',
+    title: 'First Dance',
+    desc: "Build tension to breaking point, or subtly prompt the moment and let guests join after a short photo segment. Whatever suits your vibe — we create the joy and energy for you to feel the love in the room.",
+    link: '/dj-services',
+  },
+  {
+    img: '/assets/images/adobe/adobestock_567551298.webp',
+    title: 'Dry Ice First Dance',
+    desc: 'Genuine dry ice creates that iconic "dancing on the clouds" effect — a thick, elegant blanket of mist that stays low and won\'t obscure you in photos. Romantic, dreamlike, and stunning.',
+    link: '/lighting-extras',
+  },
+  {
+    img: '/assets/images/adobe/adobestock_417571252.webp',
+    title: 'Cold Spark Machines',
+    desc: 'Breathtaking fountains of sparkling light — no heat, no smoke, no mess. Completely venue-friendly. Perfect for arrivals, entrances, and photo moments your guests will be talking about for years.',
+    link: '/lighting-extras',
+  },
 ];
 
 const faqs = [
@@ -235,9 +263,9 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Luxury Wedding DJ Services for Exclusive Venues"
-        description="Discover premium DJ services for luxury weddings. Tailored music, lighting, and elegance for your special day. Book your consultation now."
-        keyword="Luxury wedding DJ"
+        title="Professional Wedding DJ Services by Let The Music Play"
+        description="Award-winning wedding DJ Jan Blazak. 250+ weddings, 15+ years, live DJ mixing, premium Electro-Voice sound, atmospheric lighting. Worcestershire, Warwickshire, Herefordshire."
+        keyword="wedding DJ, luxury wedding DJ, live wedding DJ mixing, wedding DJ Worcestershire"
       />
 
       {/* Hero Video Slider */}
@@ -257,9 +285,11 @@ export default function Home() {
                 <video
                   ref={(el) => (videoRefs.current[i] = el)}
                   src={slide.video}
+                  poster={slide.poster}
                   muted
                   loop
                   playsInline
+                  preload={i === 0 ? 'auto' : 'metadata'}
                   className="hero__video"
                 />
                 <div className="hero__overlay" />
@@ -301,19 +331,20 @@ export default function Home() {
                 <h2>Luxury white and rustic DJ installations</h2>
                 <div className="divider" style={{ margin: '1.5rem 0' }} />
                 <p>
-                  Architecturally styled DJ booths and lighting that enhance your wedding aesthetic.
-                  A setup as elegant as the occasion.
+                  Architecturally styled DJ booths and lighting that enhance your wedding
+                  aesthetic. A setup as elegant as the occasion.
                 </p>
                 <p>
                   At Let The Music Play Limited, we provide professional wedding DJ services
                   designed entirely around you, your guests, and the atmosphere you want to create.
                 </p>
                 <p>
-                  Led by experienced wedding DJ Jan Blazak, we specialise in bespoke music planning,
-                  live DJ mixing, and elegant wedding setups that look as good as they sound.
+                  Led by experienced wedding DJ Jan Blazak, we specialise in bespoke music
+                  planning, live DJ mixing, and elegant wedding setups that look as good as they
+                  sound.
                 </p>
-                <Link to="/dj-services" className="btn btn--primary">
-                  Learn More
+                <Link to="/about-us" className="btn btn--primary">
+                  Meet Your DJ
                 </Link>
               </div>
             </ScrollReveal>
@@ -334,21 +365,21 @@ export default function Home() {
             </div>
             <div className="stats__item">
               <div className="stats__number">
-                <Counter end={100} suffix="+" />
+                <Counter end={250} suffix="+" />
               </div>
-              <div className="stats__label">Events Performed</div>
+              <div className="stats__label">Weddings Delivered</div>
             </div>
             <div className="stats__item">
               <div className="stats__number">
                 <Counter end={100} suffix="%" />
               </div>
-              <div className="stats__label">Live DJ Mixing</div>
+              <div className="stats__label">Customer Satisfaction</div>
             </div>
             <div className="stats__item">
               <div className="stats__number">
-                <Counter end={1} />
+                <Counter end={3} />
               </div>
-              <div className="stats__label">Dedicated DJ</div>
+              <div className="stats__label">Wedding Packages</div>
             </div>
           </div>
         </div>
@@ -471,6 +502,38 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Signature moments */}
+      <section className="section section--alt">
+        <div className="container">
+          <ScrollReveal>
+            <div className="section-header">
+              <h2>Signature Moments</h2>
+              <div className="divider" />
+              <p>
+                The details that turn a great wedding into one guests never stop talking about.
+              </p>
+            </div>
+          </ScrollReveal>
+          <div className="grid grid--3">
+            {signatureMoments.map((m, i) => (
+              <ScrollReveal key={i}>
+                <Link to={m.link} className="gallery-card" style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>
+                  <img
+                    src={m.img}
+                    alt={m.title}
+                    style={{ width: '100%', aspectRatio: '3/2', objectFit: 'cover' }}
+                  />
+                  <div style={{ padding: '1.75rem', background: 'var(--color-white)' }}>
+                    <h3 style={{ marginBottom: '0.75rem' }}>{m.title}</h3>
+                    <p style={{ marginBottom: 0 }}>{m.desc}</p>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Full-width video banner CTA */}
       <section className="home__banner">
         <video
@@ -503,28 +566,31 @@ export default function Home() {
             <ScrollReveal>
               <div className="testimonial-card">
                 <p>
-                  "The team at Quality Wedding DJ transformed our wedding into an unforgettable
-                  celebration. Their professionalism and attention to detail were unparalleled."
+                  "From the moment we booked with Jan we couldn't have been happier. Our event had
+                  an age range from 2 years old to over 80s and the dance floor was filled the whole
+                  time! He even surprised us with a live saxophonist during our favourite dance."
                 </p>
-                <div className="author">Sarah & James</div>
+                <div className="author">Olivia — Married 14/03/2026</div>
               </div>
             </ScrollReveal>
             <ScrollReveal>
               <div className="testimonial-card">
                 <p>
-                  "We wanted something unique as we're drum and bass enthusiasts. Jan was the
-                  perfect match, absolutely smashing it with every tune. We danced all night!"
+                  "We were after a little something different as we are drum and bass ravers. Jan
+                  was our perfect match. He absolutely smashed it and we were on the dance floor
+                  all night. Every tune was a banger."
                 </p>
-                <div className="author">Holli</div>
+                <div className="author">Holli — Married 05/04/2025</div>
               </div>
             </ScrollReveal>
             <ScrollReveal>
               <div className="testimonial-card">
                 <p>
-                  "Our requests were challenging, but Jan worked his magic and kept everyone
-                  on the dance floor all night. The rustic set was the perfect complement to our venue!"
+                  "Jan at Let The Music Play created a brilliant atmosphere for our celebration.
+                  The crowd was very mixed, and somehow he managed to cater to all. He read the
+                  room and kept people on the dance floor all night. 10/10."
                 </p>
-                <div className="author">Caroline</div>
+                <div className="author">Darren — Married 15/06/2024</div>
               </div>
             </ScrollReveal>
           </div>

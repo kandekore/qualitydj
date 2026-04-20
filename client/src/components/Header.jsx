@@ -7,8 +7,9 @@ const navItems = [
   { label: 'Home', url: '/' },
   { label: 'About', url: '/about-us' },
   { label: 'DJ Services', url: '/dj-services' },
+  { label: 'Packages', url: '/wedding-dj-packages' },
   { label: 'Lighting & Extras', url: '/lighting-extras' },
-  { label: 'Testimonials', url: '/testimonials' },
+  { label: 'Real Weddings', url: '/real-weddings' },
   { label: 'Contact', url: '/contact-us' },
 ];
 
