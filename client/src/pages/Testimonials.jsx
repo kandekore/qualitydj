@@ -109,7 +109,7 @@ const testimonials = [
     dateLabel: 'Married 15/06/2024',
     title: 'A Professional, Flexible DJ Who Knows How to Keep Everyone Moving',
     rating: 5,
-    quote: 'Jan at Let The Music Play created a brilliant atmosphere for our celebration. The crowd was very mixed, and somehow he managed to cater to all. I had an idea of the music I wanted to hear, but Jan read the room and played the music needed to keep people on the dance floor all night. I highly recommend Let The Music Play for a wedding or any celebration. 10/10.',
+    quote: 'Jan created a brilliant atmosphere for our celebration. The crowd was very mixed, and somehow he managed to cater to all. I had an idea of the music I wanted to hear, but Jan read the room and played the music needed to keep people on the dance floor all night. I highly recommend Jan for a wedding or any celebration. 10/10.',
     slug: 'darren-mixed-crowd',
   },
 ];

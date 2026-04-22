@@ -137,7 +137,7 @@ export const realWeddings = [
     review: {
       rating: 5,
       title: 'A Professional, Flexible DJ Who Knows How to Keep Everyone Moving',
-      quote: "Jan at Let the Music Play created a brilliant atmosphere for our celebration. The crowd was very mixed, and somehow, he managed to cater to all. I had an idea of the music I wanted to hear, but Jan read the room and played the music needed to keep people on the dance floor all night. I highly recommend Let the Music Play for a wedding or any celebration. 10/10",
+      quote: "Jan created a brilliant atmosphere for our celebration. The crowd was very mixed, and somehow, he managed to cater to all. I had an idea of the music I wanted to hear, but Jan read the room and played the music needed to keep people on the dance floor all night. I highly recommend Jan for a wedding or any celebration. 10/10",
       reply: "Brill. Thanks Darren. It was a pleasure to be in a room with so much love evident. Really enjoyed the night.",
     },
     story: "Reading the room is the skill that separates a professional live DJ from a playlist. Darren's wedding had a genuinely mixed crowd — different ages, different musical tastes, different expectations — and the brief was clear without being prescriptive. On the night, I balanced the couple's preferences with what the dancefloor was telling me, shifting gear as needed, never letting the floor empty.",

@@ -608,7 +608,7 @@ export default function Home() {
             <ScrollReveal>
               <div className="testimonial-card">
                 <p>
-                  "Jan at Let The Music Play created a brilliant atmosphere for our celebration.
+                  "Jan created a brilliant atmosphere for our celebration.
                   The crowd was very mixed, and somehow he managed to cater to all. He read the
                   room and kept people on the dance floor all night. 10/10."
                 </p>
