@@ -4,9 +4,74 @@ const { protect, adminOnly } = require('../middleware/auth');
 const User = require('../models/User');
 const Playlist = require('../models/Playlist');
 const Contact = require('../models/Contact');
+const Settings = require('../models/Settings');
+const { sendMail } = require('../lib/mailer');
 
 // All admin routes require auth + admin role
 router.use(protect, adminOnly);
+
+// ---- Settings ----
+
+function redactSettings(s) {
+  const obj = s.toObject ? s.toObject() : s;
+  const { smtpPass, __v, _id, key, createdAt, updatedAt, ...rest } = obj;
+  return { ...rest, smtpPassSet: !!smtpPass };
+}
+
+router.get('/settings', async (req, res) => {
+  try {
+    const s = await Settings.getSingleton();
+    res.json(redactSettings(s));
+  } catch (err) {
+    res.status(500).json({ error: 'Server error.' });
+  }
+});
+
+router.put('/settings', async (req, res) => {
+  try {
+    const s = await Settings.getSingleton();
+    const allowed = [
+      'smtpHost', 'smtpPort', 'smtpSecure', 'smtpUser',
+      'mailFromAddress', 'mailFromName',
+      'adminNotifyEmails', 'customerEmailEnabled',
+      'siteName', 'siteUrl',
+    ];
+    for (const k of allowed) {
+      if (req.body[k] !== undefined) s[k] = req.body[k];
+    }
+    // Password: treat empty as "don't change"
+    if (typeof req.body.smtpPass === 'string' && req.body.smtpPass.length > 0) {
+      s.smtpPass = req.body.smtpPass;
+    }
+    // Normalise admin emails: accept string ("a@x, b@y") or array
+    if (typeof s.adminNotifyEmails === 'string') {
+      s.adminNotifyEmails = s.adminNotifyEmails.split(/[,\s]+/).map((e) => e.trim()).filter(Boolean);
+    }
+    await s.save();
+    res.json(redactSettings(s));
+  } catch (err) {
+    console.error('Settings save error:', err);
+    res.status(500).json({ error: 'Server error.' });
+  }
+});
+
+router.post('/settings/test-email', async (req, res) => {
+  try {
+    const to = (req.body && req.body.to) || req.user.email;
+    if (!to) return res.status(400).json({ error: 'No recipient — provide "to" or set an email on the admin user.' });
+
+    const result = await sendMail({
+      to,
+      subject: 'Test email from Quality Wedding DJ admin',
+      text: 'If you are reading this, SMTP is configured correctly.',
+      html: '<p>If you are reading this, SMTP is configured correctly.</p>',
+    });
+    res.json({ ok: true, result });
+  } catch (err) {
+    console.error('Test email failed:', err);
+    res.status(500).json({ error: err.message || 'Send failed.' });
+  }
+});
 
 // Get all clients
 router.get('/clients', async (req, res) => {

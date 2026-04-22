@@ -239,6 +239,148 @@ function PlaylistsTab() {
   );
 }
 
+function SettingsTab() {
+  const [s, setS] = useState(null);
+  const [saving, setSaving] = useState(false);
+  const [status, setStatus] = useState(null);
+  const [testTo, setTestTo] = useState('');
+  const [testStatus, setTestStatus] = useState(null);
+
+  useEffect(() => {
+    apiFetch('/admin/settings').then((data) => {
+      setS({
+        ...data,
+        smtpPass: '',
+        adminNotifyEmailsText: (data.adminNotifyEmails || []).join(', '),
+      });
+    }).catch(() => {});
+  }, []);
+
+  const set = (field) => (e) => {
+    const val = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+    setS((prev) => ({ ...prev, [field]: val }));
+  };
+
+  const save = async (e) => {
+    e.preventDefault();
+    setSaving(true);
+    setStatus(null);
+    try {
+      const payload = {
+        smtpHost: s.smtpHost || '',
+        smtpPort: Number(s.smtpPort) || 587,
+        smtpSecure: !!s.smtpSecure,
+        smtpUser: s.smtpUser || '',
+        mailFromAddress: s.mailFromAddress || '',
+        mailFromName: s.mailFromName || '',
+        adminNotifyEmails: (s.adminNotifyEmailsText || '')
+          .split(/[,\s]+/).map((x) => x.trim()).filter(Boolean),
+        customerEmailEnabled: !!s.customerEmailEnabled,
+        siteName: s.siteName || '',
+        siteUrl: s.siteUrl || '',
+      };
+      if (s.smtpPass) payload.smtpPass = s.smtpPass;
+
+      const res = await fetch(`${API_URL}/admin/settings`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${getToken()}` },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error('Save failed');
+      const data = await res.json();
+      setS({
+        ...data,
+        smtpPass: '',
+        adminNotifyEmailsText: (data.adminNotifyEmails || []).join(', '),
+      });
+      setStatus({ type: 'success', text: 'Settings saved.' });
+    } catch (err) {
+      setStatus({ type: 'error', text: err.message || 'Save failed.' });
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const sendTest = async () => {
+    setTestStatus({ type: 'info', text: 'Sending…' });
+    try {
+      const res = await fetch(`${API_URL}/admin/settings/test-email`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${getToken()}` },
+        body: JSON.stringify({ to: testTo || undefined }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Send failed');
+      setTestStatus({ type: 'success', text: 'Test email sent. Check the inbox (and spam).' });
+    } catch (err) {
+      setTestStatus({ type: 'error', text: err.message });
+    }
+  };
+
+  if (!s) return <p className="admin__loading">Loading...</p>;
+
+  const row = { display: 'grid', gridTemplateColumns: '220px 1fr', gap: '1rem', alignItems: 'center', marginBottom: '1rem' };
+  const input = { padding: '0.5rem 0.75rem', border: '1px solid #ddd', borderRadius: 4, width: '100%' };
+
+  return (
+    <form onSubmit={save} style={{ maxWidth: 720 }}>
+      <h3 style={{ marginTop: 0 }}>SMTP transport</h3>
+      <div style={row}><label>SMTP host</label><input style={input} value={s.smtpHost || ''} onChange={set('smtpHost')} placeholder="e.g. mail.stackmail.com" /></div>
+      <div style={row}><label>Port</label><input style={input} type="number" value={s.smtpPort || ''} onChange={set('smtpPort')} placeholder="587" /></div>
+      <div style={row}>
+        <label>Secure (TLS)</label>
+        <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <input type="checkbox" checked={!!s.smtpSecure} onChange={set('smtpSecure')} />
+          <span style={{ color: '#666', fontSize: '0.85rem' }}>Tick for port 465. Leave unticked for 587/STARTTLS.</span>
+        </label>
+      </div>
+      <div style={row}><label>SMTP username</label><input style={input} value={s.smtpUser || ''} onChange={set('smtpUser')} /></div>
+      <div style={row}>
+        <label>SMTP password</label>
+        <input style={input} type="password" value={s.smtpPass || ''} onChange={set('smtpPass')}
+               placeholder={s.smtpPassSet ? '••••••• (leave blank to keep current)' : ''} />
+      </div>
+
+      <h3>From identity</h3>
+      <div style={row}><label>From address</label><input style={input} value={s.mailFromAddress || ''} onChange={set('mailFromAddress')} placeholder="jan@qualityweddingdj.co.uk" /></div>
+      <div style={row}><label>From name</label><input style={input} value={s.mailFromName || ''} onChange={set('mailFromName')} /></div>
+
+      <h3>Notifications</h3>
+      <div style={row}>
+        <label>Admin notify emails</label>
+        <input style={input} value={s.adminNotifyEmailsText || ''} onChange={set('adminNotifyEmailsText')}
+               placeholder="jan@qualityweddingdj.co.uk, …" />
+      </div>
+      <div style={row}>
+        <label>Send customer confirmations</label>
+        <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <input type="checkbox" checked={!!s.customerEmailEnabled} onChange={set('customerEmailEnabled')} />
+          <span style={{ color: '#666', fontSize: '0.85rem' }}>Auto-reply to the person who submitted the form.</span>
+        </label>
+      </div>
+
+      <h3>Site identity</h3>
+      <div style={row}><label>Site name</label><input style={input} value={s.siteName || ''} onChange={set('siteName')} /></div>
+      <div style={row}><label>Site URL</label><input style={input} value={s.siteUrl || ''} onChange={set('siteUrl')} /></div>
+
+      <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginTop: '1.5rem' }}>
+        <button type="submit" className="btn btn--primary" disabled={saving}>
+          {saving ? 'Saving…' : 'Save settings'}
+        </button>
+        {status && <span style={{ color: status.type === 'error' ? '#c00' : '#360' }}>{status.text}</span>}
+      </div>
+
+      <h3 style={{ marginTop: '2.5rem' }}>Send test email</h3>
+      <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+        <input style={{ ...input, maxWidth: 320 }} type="email" value={testTo} onChange={(e) => setTestTo(e.target.value)}
+               placeholder="leave blank to send to yourself" />
+        <button type="button" className="btn btn--outline" onClick={sendTest}>Send test</button>
+      </div>
+      {testStatus && <p style={{ color: testStatus.type === 'error' ? '#c00' : testStatus.type === 'success' ? '#360' : '#666', marginTop: '0.5rem' }}>{testStatus.text}</p>}
+    </form>
+  );
+}
+
 function ContactsTab() {
   const [contacts, setContacts] = useState([]);
   useEffect(() => { apiFetch('/admin/contacts').then(setContacts).catch(() => {}); }, []);
@@ -284,6 +426,7 @@ export default function Admin() {
     { id: 'clients', label: 'Clients' },
     { id: 'playlists', label: 'Playlists' },
     { id: 'contacts', label: 'Enquiries' },
+    { id: 'settings', label: 'Settings' },
   ];
 
   return (
@@ -312,6 +455,7 @@ export default function Admin() {
           {tab === 'clients' && <ClientsTab />}
           {tab === 'playlists' && <PlaylistsTab />}
           {tab === 'contacts' && <ContactsTab />}
+          {tab === 'settings' && <SettingsTab />}
         </div>
       </div>
     </>
