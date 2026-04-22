@@ -11,6 +11,8 @@ import {
   getTestimonial,
   getCoupleImages,
   getCoupleImage,
+  getAreaHero,
+  getWhyBookCopy,
 } from '../lib/locationTemplates';
 
 const SITE_URL = 'https://qualityweddingdj.co.uk';
@@ -65,6 +67,8 @@ export default function AreaPage() {
   const testimonial = getTestimonial(area.slug);
   const coupleGallery = getCoupleImages(area.slug, 6);
   const testimonialCouple = getCoupleImage(area.slug, 1);
+  const hero = getAreaHero(area);
+  const whyBook = getWhyBookCopy(area.slug, `${area.name} couples`);
   const canonical = `${SITE_URL}/wedding-dj/${area.slug}`;
   const heroPoster = area.heroImage || '/assets/images/gallery-castle-party.webp';
   const ogImage = `${SITE_URL}${heroPoster}`;
@@ -141,15 +145,14 @@ export default function AreaPage() {
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(20,15,10,0.55) 0%, rgba(20,15,10,0.75) 100%)' }} />
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '900px', padding: '0 2rem' }}>
           <p style={{ letterSpacing: '0.15em', textTransform: 'uppercase', fontSize: '0.85rem', opacity: 0.85, marginBottom: '1rem' }}>
-            Wedding DJ · {area.county}
+            {hero.eyebrow}
           </p>
           <h1 style={{ color: 'var(--color-white)', fontSize: 'clamp(2.4rem, 5vw, 4rem)', marginBottom: '1.5rem' }}>
             Wedding DJ in {area.name}
           </h1>
           <div className="divider" style={{ background: 'rgba(255,255,255,0.4)', margin: '0 auto 1.5rem' }} />
           <p style={{ fontSize: '1.2rem', maxWidth: '680px', margin: '0 auto 2.5rem', opacity: 0.95 }}>
-            Bespoke, live-mixed wedding DJ services. Premium Electro-Voice sound, atmospheric lighting,
-            and elegant setups — every booking personally handled by Jan Blazak.
+            {hero.subhead}
           </p>
           <div className="hero__buttons" style={{ justifyContent: 'center' }}>
             <Link to="/contact-us" className="btn btn--accent">Check Your Date</Link>
@@ -193,18 +196,10 @@ export default function AreaPage() {
             </ScrollReveal>
             <ScrollReveal>
               <div className="installation__text">
-                <span className="section-tag">Why book me</span>
-                <h2>Bespoke wedding DJ services for {area.name} couples</h2>
+                <span className="section-tag">{whyBook.tag}</span>
+                <h2>{whyBook.headline}</h2>
                 <div className="divider" style={{ margin: '1.5rem 0' }} />
-                <p>
-                  I'm Jan Blazak, a full-time wedding DJ. Every track of every wedding is mixed live,
-                  every booking is planned with you directly, and every detail of the kit is venue-friendly
-                  and fully backed up.
-                </p>
-                <p>
-                  No agencies, no substitute DJs, no off-the-shelf playlists — just one experienced wedding
-                  specialist focused entirely on your day.
-                </p>
+                {whyBook.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
                 <Link to="/about-us" className="btn btn--primary">Meet Your DJ</Link>
               </div>
             </ScrollReveal>

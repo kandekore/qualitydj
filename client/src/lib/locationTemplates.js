@@ -221,6 +221,147 @@ export function getTestimonial(slug) {
   return testimonials[pickVariant(`${slug}-tm`, testimonials.length)];
 }
 
+// ---------- HERO COPY ROTATION ----------
+// Each page gets a hash-rotated eyebrow + subhead so Google doesn't see 53+
+// area pages sharing identical hero wording. Six variants = ~9 pages per
+// variant, which is fine given the rest of the page is already distinct.
+
+const areaHeroVariants = [
+  {
+    eyebrow: (a) => `Wedding DJ · ${a.county}`,
+    subhead: () =>
+      'Bespoke, live-mixed wedding DJ services. Premium Electro-Voice sound, atmospheric lighting, and elegant setups — every booking personally handled by Jan Blazak.',
+  },
+  {
+    eyebrow: (a) => `Live-mix wedding DJ · ${a.county}`,
+    subhead: () =>
+      "Every track mixed live. Planned with you directly. Delivered by a full-time wedding specialist — not an agency, and not a roster of stand-ins.",
+  },
+  {
+    eyebrow: () => 'Your Wedding Day, Your DJ',
+    subhead: (a) =>
+      `A wedding DJ who actually listens. Bespoke music plans, premium sound, atmospheric lighting, and one dedicated DJ from first enquiry to the last song of your ${a.name} night.`,
+  },
+  {
+    eyebrow: (a) => `Wedding DJ · ${a.county}`,
+    subhead: () =>
+      'Live DJ mixing, premium Electro-Voice sound, a choice of elegant white or warm rustic booth, and a calm, collaborative planning process — all included as standard.',
+  },
+  {
+    eyebrow: () => 'Quality Wedding DJ',
+    subhead: () =>
+      'No playlists. No agencies. No last-minute substitute DJs. Just one experienced wedding specialist building the soundtrack around you.',
+  },
+  {
+    eyebrow: (a) => `Award-winning · ${a.county}`,
+    subhead: () =>
+      'Fifteen-plus years of full-time wedding DJ work. 250+ weddings delivered. Every single track mixed live in the room — never queued from a playlist.',
+  },
+];
+
+const venueHeroVariants = [
+  {
+    eyebrow: (v) => `Wedding DJ · ${v.town}, ${v.county}`,
+    subhead: (v) =>
+      `Bespoke, live-mixed wedding DJ services tailored to ${v.name}. Premium Electro-Voice sound, atmospheric lighting, and a setup that fits the venue.`,
+  },
+  {
+    eyebrow: (v) => `Live-mix wedding DJ · ${v.county}`,
+    subhead: (v) =>
+      `Live DJ mixing at ${v.name}, planned around you. Premium sound, atmospheric lighting, and one dedicated DJ from first enquiry to the last dance.`,
+  },
+  {
+    eyebrow: () => 'Your Wedding, Mixed Live',
+    subhead: (v) =>
+      `A wedding DJ who knows ${v.name}. Bespoke music, venue-friendly kit, and a calm planning process from the first conversation onwards.`,
+  },
+  {
+    eyebrow: (v) => `Wedding DJ · ${v.town}`,
+    subhead: (v) =>
+      `Premium sound, atmospheric lighting, and a DJ booth chosen to suit ${v.name}. Every track mixed live in the room.`,
+  },
+  {
+    eyebrow: () => 'Quality Wedding DJ',
+    subhead: (v) =>
+      `Full-time wedding specialist covering ${v.name}. No agencies, no substitutes — just one DJ focused entirely on your day.`,
+  },
+  {
+    eyebrow: (v) => `Award-winning · ${v.county}`,
+    subhead: (v) =>
+      `Award-winning wedding DJ for ${v.name}. Fifteen-plus years, 250+ weddings, and every track mixed live.`,
+  },
+];
+
+export function getAreaHero(area) {
+  const v = areaHeroVariants[pickVariant(`${area.slug}-hero`, areaHeroVariants.length)];
+  return { eyebrow: v.eyebrow(area), subhead: v.subhead(area) };
+}
+
+export function getVenueHero(venue) {
+  const v = venueHeroVariants[pickVariant(`${venue.slug}-hero`, venueHeroVariants.length)];
+  return { eyebrow: v.eyebrow(venue), subhead: v.subhead(venue) };
+}
+
+// ---------- WHY BOOK ME COPY ROTATION ----------
+// The image-split "why book me" panel gets its own six-variant rotation so
+// the split-layout copy isn't duplicated across every location page.
+
+const whyBookVariants = [
+  (name) => ({
+    tag: 'Why book me',
+    headline: `Bespoke wedding DJ services for ${name}`,
+    paragraphs: [
+      "I'm Jan Blazak, a full-time wedding DJ. Every track of every wedding is mixed live, every booking is planned with you directly, and every detail of the kit is venue-friendly and fully backed up.",
+      'No agencies, no substitute DJs, no off-the-shelf playlists — just one experienced wedding specialist focused entirely on your day.',
+    ],
+  }),
+  (name) => ({
+    tag: 'One DJ, one focus',
+    headline: `One DJ, one plan, one focus — your ${name} wedding`,
+    paragraphs: [
+      "I'm Jan Blazak. I only do weddings, and I only take on one wedding at a time. From the first email through to the final song, you're working with me directly — no agency in the middle, no junior DJ assigned closer to the date.",
+      'The result is a music plan that reflects you, set up by someone who genuinely cares how the night feels, and delivered live in the room rather than queued from a playlist.',
+    ],
+  }),
+  () => ({
+    tag: 'All Included',
+    headline: 'Live mixing, premium sound, elegant setups — all included',
+    paragraphs: [
+      'Fifteen years of mixing weddings. Electro-Voice sound sized to the room, Shure radio mics for speeches, atmospheric lighting that builds with the energy of the night, and a choice of clean white or warm rustic DJ booth — all included as standard.',
+      'Every gig is backed up. Every booking is planned collaboratively with you. And every track, every transition, every moment of the night is mixed live.',
+    ],
+  }),
+  () => ({
+    tag: 'Wedding Specialist',
+    headline: 'A proper wedding DJ, focused entirely on weddings',
+    paragraphs: [
+      "I'm a full-time wedding DJ — no corporate gigs, no club bookings, no moonlighting. That focus is the difference between a generic disco and a wedding-night atmosphere that genuinely flows.",
+      'When you book me you get me on the night. We plan the day together, I set up carefully and quietly, and I read the room from the first track to the last.',
+    ],
+  }),
+  () => ({
+    tag: 'Award-winning',
+    headline: 'Award-winning wedding DJ, personally handling every booking',
+    paragraphs: [
+      "250+ weddings. 15+ years. Live mixing on every single one. I'm Jan Blazak, and I take the music side of your day personally — from the first enquiry through to packing the final speaker back into the van.",
+      'No agencies, no substitute DJs, no stitched-together playlists. Just honest advice, careful planning, and a dancefloor that fills early and stays full.',
+    ],
+  }),
+  () => ({
+    tag: 'No Playlists',
+    headline: 'No playlists. No agencies. Just me, the kit, and your night.',
+    paragraphs: [
+      'Every wedding I play is mixed live in the room — never queued from a Spotify playlist or stitched together in advance. Live mixing is what lets the night flow, what keeps a dancefloor full, and what makes the second half of the evening feel as good as the first.',
+      'Premium Electro-Voice sound, atmospheric lighting that builds with the energy of the room, a choice of elegant or rustic booth, and direct communication with me from first enquiry to last song of the night. All included.',
+    ],
+  }),
+];
+
+export function getWhyBookCopy(slug, contextName) {
+  const variant = whyBookVariants[pickVariant(`${slug}-why`, whyBookVariants.length)];
+  return variant(contextName);
+}
+
 // ---------- COUPLE IMAGE POOL ----------
 // A curated rotation of wedding-couple imagery — a deliberate mix of races,
 // sexualities and venue styles. Each location page picks a different

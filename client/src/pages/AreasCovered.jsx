@@ -73,8 +73,27 @@ export default function AreasCovered() {
                     <Link
                       key={a.slug}
                       to={`/wedding-dj/${a.slug}`}
-                      className="btn btn--outline"
-                      style={{ textAlign: 'left', padding: '0.75rem 1.25rem' }}
+                      style={{
+                        display: 'block',
+                        padding: '0.75rem 1.25rem',
+                        background: 'var(--color-white)',
+                        border: '1px solid rgba(0,0,0,0.12)',
+                        borderRadius: '4px',
+                        color: 'var(--color-primary)',
+                        textDecoration: 'none',
+                        fontWeight: 500,
+                        transition: 'all 0.2s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = 'var(--color-primary)';
+                        e.currentTarget.style.color = 'var(--color-white)';
+                        e.currentTarget.style.borderColor = 'var(--color-primary)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = 'var(--color-white)';
+                        e.currentTarget.style.color = 'var(--color-primary)';
+                        e.currentTarget.style.borderColor = 'rgba(0,0,0,0.12)';
+                      }}
                     >
                       {a.name}
                     </Link>
