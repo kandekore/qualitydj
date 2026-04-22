@@ -224,6 +224,41 @@ export default function Testimonials() {
         </div>
       </section>
 
+      {/* Real couples gallery — different combination from other pages */}
+      <section className="section section--alt">
+        <div className="container">
+          <ScrollReveal>
+            <div className="section-header">
+              <h2>Every wedding, every couple</h2>
+              <div className="divider" />
+              <p>
+                Reviews from real couples — but the imagery matters too. Whoever you are, whoever
+                you love, and however you want your day to feel, you're welcome here.
+              </p>
+            </div>
+          </ScrollReveal>
+          <div className="gallery-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+            {[
+              { src: '/assets/images/adobe/adobestock_762134491.webp', alt: 'Black bride and groom smiling at their wedding reception', tag: 'First dance' },
+              { src: '/assets/images/adobe/adobestock_1966018059.webp', alt: 'Two grooms at a floral wedding arch', tag: 'Two grooms' },
+              { src: '/assets/images/adobe/adobestock_1948374433.webp', alt: 'Couple celebrating with guests on the dancefloor', tag: 'Dancefloor energy' },
+              { src: '/assets/images/adobe/adobestock_857261396.webp', alt: 'Wedding couple enjoying a moment together', tag: 'A moment together' },
+              { src: '/assets/images/adobe/adobestock_1841384988.webp', alt: 'Two brides at golden hour', tag: 'Love is love' },
+              { src: '/assets/images/adobe/adobestock_138205915.webp', alt: 'Romantic candlelit first dance', tag: 'Candlelight' },
+            ].map((img, i) => (
+              <ScrollReveal key={i}>
+                <div className="gallery-card">
+                  <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />
+                  <div className="gallery-card__overlay">
+                    <h3>{img.tag}</h3>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section section--dark">
         <div className="container">
           <ScrollReveal className="home__cta-center">

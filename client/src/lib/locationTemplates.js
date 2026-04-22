@@ -221,6 +221,44 @@ export function getTestimonial(slug) {
   return testimonials[pickVariant(`${slug}-tm`, testimonials.length)];
 }
 
+// ---------- COUPLE IMAGE POOL ----------
+// A curated rotation of wedding-couple imagery — a deliberate mix of races,
+// sexualities and venue styles. Each location page picks a different
+// hash-rotated subset so no two pages share the same combination.
+
+const couplePool = [
+  { src: '/assets/images/adobe/adobestock_762134491.webp', alt: 'Black bride and groom smiling at their wedding reception', tag: 'First dance' },
+  { src: '/assets/images/adobe/adobestock_1841384988.webp', alt: 'Two brides sharing a tender moment at golden-hour wedding', tag: 'Love is love' },
+  { src: '/assets/images/adobe/adobestock_1966018059.webp', alt: 'Two grooms at a floral arch on their wedding day', tag: 'Two grooms' },
+  { src: '/assets/images/adobe/adobestock_137506782.webp', alt: 'Couple sharing their first dance under warm lighting', tag: 'First dance' },
+  { src: '/assets/images/adobe/adobestock_138205915.webp', alt: 'Romantic candlelit first dance at a wedding reception', tag: 'Candlelight' },
+  { src: '/assets/images/adobe/adobestock_1948374433.webp', alt: 'Couple celebrating with guests on the dancefloor', tag: 'Dancefloor' },
+  { src: '/assets/images/adobe/adobestock_226243526.webp', alt: 'Newlyweds sharing a first dance with dry ice effect', tag: 'Dry ice moment' },
+  { src: '/assets/images/adobe/adobestock_226243697.webp', alt: 'Bride and groom enjoying a dry-ice first dance', tag: 'Dry ice moment' },
+  { src: '/assets/images/adobe/adobestock_417571252.webp', alt: 'Couple beneath cold-spark fountains during their first dance', tag: 'Cold sparks' },
+  { src: '/assets/images/adobe/adobestock_567551298.webp', alt: 'Couple in the centre of a thick dry-ice cloud first dance', tag: 'Dry ice first dance' },
+  { src: '/assets/images/adobe/adobestock_762135016.webp', alt: 'Bridal couple celebrating at their wedding party', tag: 'Celebration' },
+  { src: '/assets/images/adobe/adobestock_857261396.webp', alt: 'Wedding couple enjoying a moment together', tag: 'A moment together' },
+  { src: '/assets/images/adobe/adobestock_894754720.webp', alt: 'Newlyweds sharing a joyful moment on their wedding day', tag: 'Joy' },
+  { src: '/assets/images/adobe/adobestock_903002824.webp', alt: 'Couple celebrating their wedding with guests', tag: 'Reception' },
+];
+
+// Returns `count` images from the pool, hash-rotated by slug.
+export function getCoupleImages(slug, count = 6) {
+  const start = pickVariant(`${slug}-couples`, couplePool.length);
+  const out = [];
+  for (let i = 0; i < count; i += 1) {
+    out.push(couplePool[(start + i) % couplePool.length]);
+  }
+  return out;
+}
+
+// Single image picker with an optional offset, also rotated by slug.
+export function getCoupleImage(slug, offset = 0) {
+  const start = pickVariant(`${slug}-couple-${offset}`, couplePool.length);
+  return couplePool[start];
+}
+
 // ---------- FAQ BANK ----------
 
 const faqBank = [

@@ -8,6 +8,8 @@ import {
   getVenueContentBlocks,
   getLocationFAQs,
   getTestimonial,
+  getCoupleImages,
+  getCoupleImage,
 } from '../lib/locationTemplates';
 
 const SITE_URL = 'https://qualityweddingdj.co.uk';
@@ -60,6 +62,8 @@ export default function VenuePage() {
   const blocks = getVenueContentBlocks(venue);
   const faqs = getLocationFAQs(venue.slug, venue.name, venue.county);
   const testimonial = getTestimonial(venue.slug);
+  const coupleGallery = getCoupleImages(venue.slug, 6);
+  const testimonialCouple = getCoupleImage(venue.slug, 1);
   const canonical = `${SITE_URL}/wedding-dj/venues/${venue.slug}`;
   const heroPoster = venue.heroImage || '/assets/images/gallery-castle-party.webp';
   const ogImage = `${SITE_URL}${heroPoster}`;
@@ -343,16 +347,58 @@ export default function VenuePage() {
         </div>
       </section>
 
-      {/* Real testimonial */}
+      {/* Real testimonial — couple image + quote split */}
       <section className="section section--alt">
-        <div className="container" style={{ maxWidth: '800px' }}>
-          <ScrollReveal>
-            <div className="testimonial-card" style={{ textAlign: 'center' }}>
-              <p style={{ fontSize: '1.15rem', lineHeight: 1.7 }}>"{testimonial.quote}"</p>
-              <div className="author">{testimonial.couple} — Married {testimonial.date}</div>
-              <div style={{ marginTop: '2rem' }}>
-                <Link to="/testimonials" className="btn btn--primary">Read More Reviews</Link>
+        <div className="container">
+          <div className="grid grid--2 installation__grid" style={{ alignItems: 'center' }}>
+            <ScrollReveal>
+              <div className="installation__image">
+                <img src={testimonialCouple.src} alt={testimonialCouple.alt} loading="lazy" decoding="async" />
               </div>
+            </ScrollReveal>
+            <ScrollReveal>
+              <div>
+                <span className="section-tag">Real Couples</span>
+                <h2>What couples say</h2>
+                <div className="divider" style={{ margin: '1.5rem 0' }} />
+                <p style={{ fontSize: '1.1rem', lineHeight: 1.7, fontStyle: 'italic' }}>"{testimonial.quote}"</p>
+                <p style={{ marginTop: '1rem', fontWeight: 600 }}>{testimonial.couple} — Married {testimonial.date}</p>
+                <Link to="/testimonials" className="btn btn--primary" style={{ marginTop: '1rem' }}>Read More Reviews</Link>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Couples I'm proud to play for — diverse imagery gallery */}
+      <section className="section">
+        <div className="container">
+          <ScrollReveal>
+            <div className="section-header" style={{ textAlign: 'center', marginBottom: '3rem' }}>
+              <span className="section-tag">Every Wedding, Every Couple</span>
+              <h2>Weddings I'm proud to play for at {venue.name}</h2>
+              <div className="divider" style={{ margin: '1.5rem auto' }} />
+              <p style={{ maxWidth: '640px', margin: '0 auto' }}>
+                Every couple deserves a music plan built around them. Whoever you are, whoever you love,
+                and however you want your day at {venue.name} to feel — I've got you.
+              </p>
+            </div>
+          </ScrollReveal>
+          <div className="gallery-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+            {coupleGallery.map((img, i) => (
+              <ScrollReveal key={i}>
+                <div className="gallery-card">
+                  <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />
+                  <div className="gallery-card__overlay">
+                    <h3>{img.tag}</h3>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+          <ScrollReveal>
+            <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
+              <Link to="/contact-us" className="btn btn--accent">Tell Me About Your Day</Link>
             </div>
           </ScrollReveal>
         </div>

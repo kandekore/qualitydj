@@ -145,6 +145,41 @@ export default function WeddingDJPackages() {
         </div>
       </section>
 
+      {/* Couples I work with — diverse imagery, different combo from About/Testimonials */}
+      <section className="section">
+        <div className="container">
+          <ScrollReveal>
+            <div className="section-header">
+              <h2>Built around every couple</h2>
+              <div className="divider" />
+              <p>
+                These packages flex around you. Whoever you are, whoever you love, and however you
+                want your day to feel, the music plan starts with the conversation we have.
+              </p>
+            </div>
+          </ScrollReveal>
+          <div className="gallery-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+            {[
+              { src: '/assets/images/adobe/adobestock_1841384988.webp', alt: 'Two brides at golden hour', tag: 'Love is love' },
+              { src: '/assets/images/adobe/adobestock_762134491.webp', alt: 'Black bride and groom celebrating', tag: 'Joyful first dance' },
+              { src: '/assets/images/adobe/adobestock_1966018059.webp', alt: 'Two grooms at a floral arch', tag: 'Two grooms' },
+              { src: '/assets/images/adobe/adobestock_226243526.webp', alt: 'Couple in a dry-ice first dance', tag: 'Dry ice moment' },
+              { src: '/assets/images/adobe/adobestock_567551298.webp', alt: 'Couple in a thick dry-ice cloud', tag: 'Dancing on the clouds' },
+              { src: '/assets/images/adobe/adobestock_137506782.webp', alt: 'Couple sharing their first dance', tag: 'First dance' },
+            ].map((img, i) => (
+              <ScrollReveal key={i}>
+                <div className="gallery-card">
+                  <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />
+                  <div className="gallery-card__overlay">
+                    <h3>{img.tag}</h3>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section style={{ position: 'relative', padding: '6rem 0', overflow: 'hidden' }}>
         <video
           src="/assets/videos/rusticvid.mp4"

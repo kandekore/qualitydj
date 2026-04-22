@@ -100,6 +100,41 @@ export default function About() {
         </div>
       </section>
 
+      {/* Real couples — diverse imagery */}
+      <section className="section section--alt">
+        <div className="container">
+          <ScrollReveal>
+            <div className="section-header">
+              <h2>Couples I'm proud to play for</h2>
+              <div className="divider" />
+              <p>
+                Every couple deserves a music plan built around them. Whoever you are, whoever you
+                love, and however you want your day to feel — I've got you.
+              </p>
+            </div>
+          </ScrollReveal>
+          <div className="gallery-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+            {[
+              { src: '/assets/images/adobe/adobestock_762134491.webp', alt: 'Black bride and groom smiling at their wedding reception', tag: 'Joyful first dance' },
+              { src: '/assets/images/adobe/adobestock_1841384988.webp', alt: 'Two brides sharing a tender moment at golden hour', tag: 'Love is love' },
+              { src: '/assets/images/adobe/adobestock_1966018059.webp', alt: 'Two grooms at a floral wedding arch', tag: 'Two grooms' },
+              { src: '/assets/images/adobe/adobestock_762135016.webp', alt: 'Bridal couple celebrating with their guests', tag: 'Celebration' },
+              { src: '/assets/images/adobe/adobestock_894754720.webp', alt: 'Newlyweds sharing a joyful moment', tag: 'Pure joy' },
+              { src: '/assets/images/adobe/adobestock_903002824.webp', alt: 'Couple celebrating their wedding with guests', tag: 'A full dancefloor' },
+            ].map((img, i) => (
+              <ScrollReveal key={i}>
+                <div className="gallery-card">
+                  <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />
+                  <div className="gallery-card__overlay">
+                    <h3>{img.tag}</h3>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section section--dark">
         <div className="container">
           <ScrollReveal>
