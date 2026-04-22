@@ -41,7 +41,12 @@ export function AuthProvider({ children }) {
       body: JSON.stringify({ email, password }),
     });
     const data = await res.json();
-    if (!res.ok) throw new Error(data.error);
+    if (!res.ok) {
+      const err = new Error(data.error || 'Sign-in failed.');
+      err.code = data.code;
+      err.email = data.email;
+      throw err;
+    }
     localStorage.setItem('token', data.token);
     setUser(data.user);
     return data;
@@ -55,8 +60,37 @@ export function AuthProvider({ children }) {
     });
     const data = await res.json();
     if (!res.ok) throw new Error(data.error);
-    localStorage.setItem('token', data.token);
-    setUser(data.user);
+    // No auto-login — user must verify email, then sign in.
+    return data;
+  };
+
+  const verifyEmail = async (token) => {
+    const res = await fetch(`${API_URL}/auth/verify-email`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token }),
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      const err = new Error(data.error || 'Verification failed.');
+      err.code = data.code;
+      throw err;
+    }
+    if (data.token) {
+      localStorage.setItem('token', data.token);
+      setUser(data.user);
+    }
+    return data;
+  };
+
+  const resendVerification = async (email) => {
+    const res = await fetch(`${API_URL}/auth/resend-verification`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Could not resend.');
     return data;
   };
 
@@ -66,7 +100,7 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, register, logout, verifyEmail, resendVerification }}>
       {children}
     </AuthContext.Provider>
   );

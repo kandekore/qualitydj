@@ -74,10 +74,16 @@ async function getSiteContext() {
   };
 }
 
+async function isSmtpConfigured() {
+  const s = await Settings.getSingleton();
+  return !!(s.smtpHost && s.smtpPort && (s.mailFromAddress || s.smtpUser));
+}
+
 module.exports = {
   sendMail,
   sendMailSafe,
   getAdminRecipients,
   isCustomerEmailEnabled,
   getSiteContext,
+  isSmtpConfigured,
 };

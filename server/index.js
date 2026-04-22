@@ -15,7 +15,20 @@ const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/qualitydj'
 
 mongoose
   .connect(MONGO_URI)
-  .then(() => console.log('MongoDB connected'))
+  .then(async () => {
+    console.log('MongoDB connected');
+    // Grandfather accounts created before email verification existed
+    try {
+      const User = require('./models/User');
+      const r = await User.updateMany(
+        { emailVerified: { $exists: false } },
+        { $set: { emailVerified: true } }
+      );
+      if (r.modifiedCount > 0) console.log(`Migrated ${r.modifiedCount} pre-existing users to emailVerified=true`);
+    } catch (e) {
+      console.error('User migration error:', e.message);
+    }
+  })
   .catch((err) => console.log('MongoDB connection error:', err.message));
 
 // Routes

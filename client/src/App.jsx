@@ -18,6 +18,8 @@ import ExclusiveVenues from './pages/ExclusiveVenues';
 import SpotifyPlaylist from './pages/SpotifyPlaylist';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import RegisterSuccess from './pages/RegisterSuccess';
+import VerifyEmail from './pages/VerifyEmail';
 import Admin from './pages/Admin';
 import AreaPage from './pages/AreaPage';
 import VenuePage from './pages/VenuePage';
@@ -55,6 +57,8 @@ function App() {
             <Route path="/spotify-playlist" element={<SpotifyPlaylist />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/register-success" element={<RegisterSuccess />} />
+            <Route path="/verify-email" element={<VerifyEmail />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/areas-covered" element={<AreasCovered />} />
             <Route path="/venues" element={<VenuesIndex />} />

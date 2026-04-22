@@ -47,7 +47,7 @@ export default function Register() {
         weddingDate: form.weddingDate,
         venue: form.venue,
       });
-      navigate('/spotify-playlist');
+      navigate(`/register-success?email=${encodeURIComponent(form.email)}`);
     } catch (err) {
       setError(err.message);
     } finally {

@@ -13,6 +13,9 @@ const userSchema = new mongoose.Schema(
     role: { type: String, enum: ['client', 'admin'], default: 'client' },
     weddingDate: { type: String },
     venue: { type: String },
+    emailVerified: { type: Boolean, default: false },
+    verifyToken: { type: String, index: true },
+    verifyTokenExpires: { type: Date },
   },
   { timestamps: true }
 );
