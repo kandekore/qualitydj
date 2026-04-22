@@ -56,7 +56,7 @@ export default function Contact() {
 
       <section className="page-hero">
         <img
-          src="/assets/images/IMG_2694-768x1200.jpg"
+          src="/assets/images/IMG_2694-768x1200.webp"
           alt="Contact Jan"
           className="page-hero__bg"
         />

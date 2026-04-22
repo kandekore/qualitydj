@@ -51,7 +51,7 @@ export default function SoundSystem() {
 
       <section className="page-hero">
         <img
-          src="/assets/images/white-rig.jpg"
+          src="/assets/images/white-rig.webp"
           alt="Premium wedding sound system"
           className="page-hero__bg"
         />

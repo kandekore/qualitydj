@@ -14,7 +14,7 @@ export default function About() {
 
       <section className="page-hero">
         <img
-          src="/assets/images/IMG_2961-scaled.jpg"
+          src="/assets/images/IMG_2961-scaled.webp"
           alt="Wedding venue"
           className="page-hero__bg"
         />
@@ -31,7 +31,7 @@ export default function About() {
           <div className="grid grid--2 about__grid">
             <ScrollReveal>
               <div className="about__image">
-                <img src="/assets/images/about-us/jan-480x472.jpg" alt="DJ Jan Blazak" />
+                <img src="/assets/images/about-us/jan-480x472.webp" alt="DJ Jan Blazak" />
               </div>
             </ScrollReveal>
             <ScrollReveal>

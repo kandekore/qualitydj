@@ -13,7 +13,7 @@ export default function ExclusiveVenues() {
 
       <section className="page-hero">
         <img
-          src="/assets/images/home/IMG_2907-scaled-e1770061107434-1200x675.jpg"
+          src="/assets/images/home/IMG_2907-scaled-e1770061107434-1200x675.webp"
           alt="Exclusive venue"
           className="page-hero__bg"
         />

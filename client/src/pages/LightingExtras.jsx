@@ -79,7 +79,7 @@ export default function LightingExtras() {
 
       <section className="page-hero">
         <img
-          src="/assets/images/uplighters.jpg"
+          src="/assets/images/uplighters.webp"
           alt="Wedding venue illuminated with coloured uplighters"
           className="page-hero__bg"
         />
@@ -157,7 +157,7 @@ export default function LightingExtras() {
                 </p>
               </div>
               <div className="installation__image">
-                <img src="/assets/images/uplighter.jpg" alt="Venue wall washed with coloured uplighting" />
+                <img src="/assets/images/uplighter.webp" alt="Venue wall washed with coloured uplighting" />
               </div>
             </div>
           </ScrollReveal>

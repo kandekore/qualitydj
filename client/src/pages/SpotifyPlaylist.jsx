@@ -100,7 +100,7 @@ export default function SpotifyPlaylist() {
       />
 
       <section className="page-hero">
-        <img src="/assets/images/IMG_3115-1152x1536.jpg" alt="Music" className="page-hero__bg" />
+        <img src="/assets/images/IMG_3115-1152x1536.webp" alt="Music" className="page-hero__bg" />
         <div className="page-hero__overlay" />
         <div className="page-hero__content">
           <h1>Your Music, Your Way</h1>

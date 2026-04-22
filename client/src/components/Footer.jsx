@@ -20,8 +20,8 @@ export default function Footer() {
       <div className="footer__inner container">
         <div className="footer__brand">
           <div className="footer__badges">
-            <img src="/assets/images/badge-rated.png" alt="Rated 10 out of 10" />
-            <img src="/assets/images/badge-awards.png" alt="Wedding Awards" />
+            <img src="/assets/images/badge-rated.webp" alt="Rated 10 out of 10" />
+            <img src="/assets/images/badge-awards.webp" alt="Wedding Awards" />
           </div>
           <p className="footer__tagline">
             "Your Wedding, Your Music: Expertly Mixed for an Unforgettable Celebration"

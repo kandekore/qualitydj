@@ -70,7 +70,7 @@ export default function DJServices() {
 
       <section className="page-hero">
         <img
-          src="/assets/images/woodenheader.jpg"
+          src="/assets/images/woodenheader.webp"
           alt="Rustic wooden DJ booth setup"
           className="page-hero__bg"
         />

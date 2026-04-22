@@ -172,7 +172,7 @@ export default function Testimonials() {
 
       <section className="page-hero">
         <img
-          src="/assets/images/SIPX2521-1280x1000.jpg"
+          src="/assets/images/SIPX2521-1280x1000.webp"
           alt="Wedding celebration"
           className="page-hero__bg"
         />

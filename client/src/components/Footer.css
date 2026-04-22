@@ -1,7 +1,7 @@
 .footer {
   position: relative;
   background-color: var(--color-primary);
-  background-image: url('/assets/images/footer-bg.jpg');
+  background-image: url('/assets/images/footer-bg.webp');
   background-size: cover;
   background-position: center;
   color: var(--color-white);
