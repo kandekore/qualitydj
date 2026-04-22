@@ -50,7 +50,12 @@ export default function Footer() {
 
       <div className="footer__bottom">
         <div className="container" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '0.75rem' }}>
-          <p style={{ margin: 0 }}>&copy; {new Date().getFullYear()} Quality Wedding DJ. All rights reserved.</p>
+          <p style={{ margin: 0 }}>
+            &copy; {new Date().getFullYear()} Quality Wedding DJ. All rights reserved.
+            <span style={{ display: 'block', fontSize: '0.8rem', opacity: 0.65, marginTop: '0.35rem' }}>
+              Quality Wedding DJ is a trading name of Let The Music Play Ltd.
+            </span>
+          </p>
           <p style={{ margin: 0, fontSize: '0.85rem', opacity: 0.65 }}>
             <Link to="/areas-covered" style={{ color: 'inherit' }}>Areas Covered</Link>
             <span style={{ margin: '0 0.5rem' }}>·</span>
