@@ -56,6 +56,8 @@ export default function WeddingDJPackages() {
         title="Wedding DJ Packages | Evening, All-Day & VIP Deluxe"
         description="Three elegant wedding DJ packages: Evening Only (5 hours), All-Day Wraparound (ceremony to last dance), VIP Deluxe (with uplighting, dry ice, cold spark & laser sign writing)."
         keyword="wedding DJ packages, all day wedding DJ, wedding DJ pricing, VIP wedding DJ"
+        image="/assets/images/adobe/adobestock_894754720.webp"
+        imageAlt="Wedding dancefloor lit by atmospheric coloured lighting"
       />
 
       <section className="page-hero">

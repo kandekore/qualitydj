@@ -97,6 +97,7 @@ export default function SpotifyPlaylist() {
       <SEO
         title="Submit Your Spotify Playlist"
         description="Share your favourite Spotify playlists with Jan so he can craft the perfect soundtrack for your wedding."
+        noindex
       />
 
       <section className="page-hero">

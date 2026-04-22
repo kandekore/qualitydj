@@ -431,7 +431,7 @@ export default function Admin() {
 
   return (
     <>
-      <SEO title="Admin Dashboard" />
+      <SEO title="Admin Dashboard" noindex />
       <div className="admin">
         <div className="admin__header">
           <h1>Admin Dashboard</h1>

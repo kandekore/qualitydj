@@ -27,6 +27,8 @@ export default function AreasCovered() {
         description={`A full list of the ${areas.length} towns, cities and regions I cover as a wedding DJ — Worcestershire, Herefordshire, Gloucestershire, Warwickshire, Shropshire, West Midlands, Staffordshire and the Cotswolds.`}
         keyword="wedding DJ areas covered, West Midlands wedding DJ, Worcestershire wedding DJ"
         canonical={canonical}
+        image="/assets/images/adobe/adobestock_762134491.webp"
+        imageAlt="Bride and groom dancing joyfully at their reception"
       />
 
       <section className="page-hero">

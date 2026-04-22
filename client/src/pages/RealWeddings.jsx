@@ -10,6 +10,8 @@ export default function RealWeddings() {
         title="Real Weddings | DJ Stories from Jan Blazak"
         description="Explore real wedding stories: country western, drum and bass, rustic barns, castle parties, all-day wraparound weddings. Each one planned and mixed live by Jan Blazak."
         keyword="real weddings, wedding DJ case studies, wedding DJ examples"
+        image="/assets/images/adobe/adobestock_567551298.webp"
+        imageAlt="Dreamlike wedding moment with low-lying mist"
       />
 
       <section className="page-hero">

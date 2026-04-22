@@ -22,7 +22,7 @@ export default function RegisterSuccess() {
 
   return (
     <>
-      <SEO title="Check Your Email" description="Confirm your email address to activate your account." />
+      <SEO title="Check Your Email" description="Confirm your email address to activate your account." noindex />
       <div className="auth-page">
         <div className="auth-card">
           <h2>Check your email</h2>

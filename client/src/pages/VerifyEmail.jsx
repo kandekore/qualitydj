@@ -33,7 +33,7 @@ export default function VerifyEmail() {
 
   return (
     <>
-      <SEO title="Verifying Email" />
+      <SEO title="Verifying Email" noindex />
       <div className="auth-page">
         <div className="auth-card">
           {state.status === 'pending' && (

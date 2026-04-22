@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import SEO from '../components/SEO';
 import ScrollReveal from '../components/ScrollReveal';
+import { defaultSchema, toAbsoluteUrl } from '../lib/site';
 
 const testimonials = [
   {
@@ -127,23 +127,28 @@ export default function Testimonials() {
     testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length
   ).toFixed(1);
 
-  const reviewSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': 'https://qualityweddingdj.co.uk/#business',
-    name: 'Quality Wedding DJ',
-    url: 'https://qualityweddingdj.co.uk',
-    image: 'https://qualityweddingdj.co.uk/assets/brand/logo-1024x1000.jpg',
-    priceRange: '£££',
-    areaServed: ['Worcestershire', 'Warwickshire', 'Herefordshire'],
-    aggregateRating: {
+  const pageUrl = toAbsoluteUrl('/testimonials');
+  const pageImage = toAbsoluteUrl('/assets/images/adobe/adobestock_903002824.webp');
+  const description = `Read ${testimonials.length} real 5-star wedding reviews for Jan Blazak at Quality Wedding DJ. Country western, drum and bass, castle weddings, rustic barns and more.`;
+
+  // Extend the default LocalBusiness node with aggregate rating + reviews so the
+  // page emits a single coherent schema graph (no duplicate @id conflicts).
+  const schema = defaultSchema({
+    pageUrl,
+    title: 'Wedding DJ Reviews & Testimonials | Quality Wedding DJ',
+    description,
+    image: pageImage,
+  });
+  const businessNode = schema['@graph'].find((n) => n['@type'] === 'LocalBusiness');
+  if (businessNode) {
+    businessNode.aggregateRating = {
       '@type': 'AggregateRating',
       ratingValue: avgRating,
       reviewCount: testimonials.length,
       bestRating: 5,
       worstRating: 1,
-    },
-    review: testimonials.map((t) => ({
+    };
+    businessNode.review = testimonials.map((t) => ({
       '@type': 'Review',
       author: { '@type': 'Person', name: t.author },
       datePublished: t.date,
@@ -155,20 +160,19 @@ export default function Testimonials() {
         bestRating: 5,
         worstRating: 1,
       },
-    })),
-  };
+    }));
+  }
 
   return (
     <>
       <SEO
         title="Wedding DJ Reviews & Testimonials"
-        description={`Read ${testimonials.length} real 5-star wedding reviews for Jan Blazak at Quality Wedding DJ. Country western, drum and bass, castle weddings, rustic barns and more.`}
+        description={description}
         keyword="wedding DJ reviews, wedding DJ testimonials"
+        image="/assets/images/adobe/adobestock_903002824.webp"
+        imageAlt="Wedding guests celebrating on the dancefloor"
+        schema={schema}
       />
-
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(reviewSchema)}</script>
-      </Helmet>
 
       <section className="page-hero">
         <img

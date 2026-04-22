@@ -149,6 +149,8 @@ export default function FAQ() {
         title="Wedding DJ FAQs | Your Questions Answered"
         description="Answers to the most common questions about my wedding DJ services — booking, music, equipment, lighting, extras, and more."
         keyword="wedding DJ FAQ, wedding DJ questions"
+        image="/assets/images/adobe/adobestock_762135016.webp"
+        imageAlt="Couple celebrating with guests on the dancefloor"
       />
 
       <Helmet>

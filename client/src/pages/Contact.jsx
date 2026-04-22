@@ -52,6 +52,8 @@ export default function Contact() {
         title="Contact Quality Wedding DJ | High-End Wedding DJ Services"
         description="Reach out to Quality Wedding DJ for premium, bespoke DJ services. Let's make your high-end wedding unforgettable. Contact Jan now!"
         keyword="high-end wedding DJ"
+        image="/assets/images/adobe/adobestock_1966018059.webp"
+        imageAlt="Grooms embracing at their wedding reception"
       />
 
       <section className="page-hero">

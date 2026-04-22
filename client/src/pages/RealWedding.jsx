@@ -42,6 +42,9 @@ export default function RealWedding() {
         title={wedding.title}
         description={wedding.summary}
         keyword={wedding.tags.join(', ')}
+        image={wedding.heroImage}
+        imageAlt={wedding.title}
+        type="article"
       />
 
       <Helmet>

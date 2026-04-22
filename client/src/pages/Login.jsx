@@ -47,7 +47,7 @@ export default function Login() {
 
   return (
     <>
-      <SEO title="Sign In" description="Sign in to your Quality Wedding DJ account." />
+      <SEO title="Sign In" description="Sign in to your Quality Wedding DJ account." noindex />
       <div className="auth-page">
         <div className="auth-card">
           <h2>Welcome Back</h2>

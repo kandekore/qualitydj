@@ -50,7 +50,7 @@ export default function ResetPassword() {
 
   return (
     <>
-      <SEO title="Choose a New Password" />
+      <SEO title="Choose a New Password" noindex />
       <div className="auth-page">
         <div className="auth-card">
           <h2>Choose a new password</h2>

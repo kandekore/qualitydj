@@ -47,6 +47,8 @@ export default function SoundSystem() {
         title="Premium Wedding Sound System | Electro-Voice, Shure, Yamaha"
         description="Crystal-clear Electro-Voice sound: EV Evolve 50 stacks, Everse 12 wireless speakers, EKX-18 subs, Shure radio mics, Yamaha mixing desk. Every piece of audio kit to cover every base on your big day."
         keyword="wedding sound system, wireless wedding speakers, Electro-Voice wedding DJ, outdoor ceremony speakers, wedding microphones"
+        image="/assets/images/adobe/adobestock_857261396.webp"
+        imageAlt="Professional wedding sound system at a venue"
       />
 
       <section className="page-hero">

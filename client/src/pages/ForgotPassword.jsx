@@ -27,7 +27,7 @@ export default function ForgotPassword() {
 
   return (
     <>
-      <SEO title="Reset Password" description="Reset the password on your Quality Wedding DJ account." />
+      <SEO title="Reset Password" description="Reset the password on your Quality Wedding DJ account." noindex />
       <div className="auth-page">
         <div className="auth-card">
           <h2>Reset your password</h2>

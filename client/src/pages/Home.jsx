@@ -285,6 +285,8 @@ export default function Home() {
         title="Professional Wedding DJ Services by Quality Wedding DJ"
         description="Award-winning wedding DJ Jan Blazak. 250+ weddings, 15+ years, live DJ mixing, premium Electro-Voice sound, atmospheric lighting. Worcestershire, Warwickshire, Herefordshire."
         keyword="wedding DJ, luxury wedding DJ, live wedding DJ mixing, wedding DJ Worcestershire"
+        image="/assets/images/adobe/adobestock_137506782.webp"
+        imageAlt="Romantic first dance at a wedding reception"
       />
 
       {/* Hero Video Slider */}

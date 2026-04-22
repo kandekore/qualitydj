@@ -57,7 +57,7 @@ export default function Register() {
 
   return (
     <>
-      <SEO title="Create Account" description="Create your Quality Wedding DJ account." />
+      <SEO title="Create Account" description="Create your Quality Wedding DJ account." noindex />
       <div className="auth-page">
         <div className="auth-card auth-card--wide">
           <h2>Create Your Account</h2>

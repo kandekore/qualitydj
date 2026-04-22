@@ -9,6 +9,8 @@ export default function ExclusiveVenues() {
         title="High-End Wedding DJ for Exclusive Venues"
         description="Discover bespoke DJ services for weddings at exclusive venues. Elevate your special day with Quality Wedding DJ, where elegance meets exceptional sound."
         keyword="high-end wedding DJ for exclusive venues"
+        image="/assets/images/adobe/adobestock_1841384988.webp"
+        imageAlt="Brides kissing at golden hour at a luxury wedding venue"
       />
 
       <section className="page-hero">

@@ -66,6 +66,8 @@ export default function DJServices() {
         title="Wedding DJ Services | Live Mixing, Bespoke Soundtracks"
         description="Bespoke wedding DJ services by award-winning DJ Jan Blazak. Live mixing, three elegant packages, ceremony through to last dance. Book your consultation."
         keyword="wedding DJ services, live wedding DJ, bespoke wedding DJ"
+        image="/assets/images/adobe/adobestock_1948374433.webp"
+        imageAlt="Elegant DJ booth setup at a wedding reception"
       />
 
       <section className="page-hero">

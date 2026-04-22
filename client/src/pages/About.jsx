@@ -7,9 +7,11 @@ export default function About() {
   return (
     <>
       <SEO
-        title="High-End Wedding DJ Services"
-        description="Discover high-end wedding DJ services tailored for luxury venues. Elevate your celebration with Quality Wedding DJ's bespoke musical experiences."
-        keyword="high-end wedding DJ services"
+        title="About Jan Blazak | Wedding DJ Serving Worcestershire & the West Midlands"
+        description="Meet Jan Blazak — 15+ years, 250+ weddings, live DJ mixing, premium Electro-Voice sound and atmospheric lighting across Worcestershire, Warwickshire and Herefordshire."
+        keyword="wedding DJ Jan Blazak, about wedding DJ, luxury wedding DJ, Worcestershire wedding DJ"
+        image="/assets/images/adobe/adobestock_138205915.webp"
+        imageAlt="Couple sharing an emotional first dance"
       />
 
       <section className="page-hero">

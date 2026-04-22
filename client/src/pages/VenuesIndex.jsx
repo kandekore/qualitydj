@@ -42,6 +42,8 @@ export default function VenuesIndex() {
         description={`A curated list of ${venues.length} wedding venues I regularly play — castles, country houses, hotels, barns, marquees and tipis across Worcestershire, Herefordshire, Gloucestershire, Shropshire and the West Midlands.`}
         keyword="wedding DJ venues, West Midlands wedding venues, country house wedding DJ"
         canonical={canonical}
+        image="/assets/images/adobe/adobestock_417571252.webp"
+        imageAlt="Cold spark machines lighting a wedding venue"
       />
 
       <section className="page-hero">

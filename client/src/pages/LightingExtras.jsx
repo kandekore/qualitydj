@@ -75,6 +75,8 @@ export default function LightingExtras() {
         title="Wedding Lighting, Uplighting & Special Effects"
         description="Atmospheric wedding lighting: 20+ fixtures, 12 moving heads, 32 uplighters, dry ice, cold spark machines, 5m laser sign writing. Venue-friendly, professionally installed."
         keyword="wedding lighting, wedding uplighting, dry ice first dance, cold spark wedding, laser wedding sign"
+        image="/assets/images/adobe/adobestock_226243697.webp"
+        imageAlt="Dry ice first dance with cloud effect at a wedding"
       />
 
       <section className="page-hero">
