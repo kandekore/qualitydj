@@ -94,13 +94,43 @@ export function AuthProvider({ children }) {
     return data;
   };
 
+  const forgotPassword = async (email) => {
+    const res = await fetch(`${API_URL}/auth/forgot-password`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Could not start reset.');
+    return data;
+  };
+
+  const resetPassword = async (token, password) => {
+    const res = await fetch(`${API_URL}/auth/reset-password`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token, password }),
+    });
+    const data = await res.json();
+    if (!res.ok) {
+      const err = new Error(data.error || 'Reset failed.');
+      err.code = data.code;
+      throw err;
+    }
+    if (data.token) {
+      localStorage.setItem('token', data.token);
+      setUser(data.user);
+    }
+    return data;
+  };
+
   const logout = () => {
     localStorage.removeItem('token');
     setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout, verifyEmail, resendVerification }}>
+    <AuthContext.Provider value={{ user, loading, login, register, logout, verifyEmail, resendVerification, forgotPassword, resetPassword }}>
       {children}
     </AuthContext.Provider>
   );

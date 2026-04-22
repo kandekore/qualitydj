@@ -11,6 +11,7 @@ const {
 } = require('../lib/mailer');
 
 const VERIFY_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours
+const RESET_TTL_MS = 60 * 60 * 1000; // 1 hour — shorter because it's a password-change power
 
 function escapeHtml(s) {
   return String(s || '')
@@ -23,6 +24,40 @@ function newVerifyToken() {
     token: crypto.randomBytes(32).toString('base64url'),
     expires: new Date(Date.now() + VERIFY_TTL_MS),
   };
+}
+
+async function sendPasswordResetEmail(user, ctx) {
+  const link = `${ctx.siteUrl}/reset-password?token=${user.resetToken}`;
+  const text = `Hi ${user.name},\n\n` +
+    `Someone — hopefully you — asked to reset the password on your ${ctx.siteName} account.\n\n` +
+    `Click the link below to choose a new password:\n\n${link}\n\n` +
+    `This link expires in 1 hour. If you didn't ask for this, you can safely ignore this email — your password will stay the same.\n\n` +
+    `— ${ctx.siteName}\n${ctx.siteUrl}`;
+  const html = `
+    <div style="font-family:system-ui,sans-serif;max-width:560px;color:#333">
+      <p>Hi ${escapeHtml(user.name)},</p>
+      <p>Someone — hopefully you — asked to reset the password on your
+         <strong>${escapeHtml(ctx.siteName)}</strong> account.</p>
+      <p>Click the button below to choose a new password.</p>
+      <p style="margin:1.5rem 0">
+        <a href="${escapeHtml(link)}"
+           style="display:inline-block;background:#d4a574;color:#fff;text-decoration:none;padding:0.75rem 1.5rem;border-radius:4px;font-weight:500">
+          Reset my password
+        </a>
+      </p>
+      <p style="color:#666;font-size:0.9rem">Or paste this link into your browser:<br>
+        <a href="${escapeHtml(link)}">${escapeHtml(link)}</a></p>
+      <p style="color:#666;font-size:0.85rem">This link expires in 1 hour. If you didn't ask for this, you can safely ignore this email — your password will stay the same.</p>
+      <p style="margin-top:2rem;color:#888;font-size:0.85rem">— ${escapeHtml(ctx.siteName)}<br>
+        <a href="${escapeHtml(ctx.siteUrl)}">${escapeHtml(ctx.siteUrl)}</a></p>
+    </div>`;
+
+  return sendMail({
+    to: user.email,
+    subject: `Reset your password — ${ctx.siteName}`,
+    text,
+    html,
+  });
 }
 
 async function sendVerificationEmail(user, ctx) {
@@ -212,6 +247,83 @@ router.post('/resend-verification', async (req, res) => {
     respond();
   } catch (err) {
     console.error('Resend error:', err);
+    res.status(500).json({ error: 'Server error.' });
+  }
+});
+
+// Start a password reset — always returns OK so callers can't enumerate emails
+router.post('/forgot-password', async (req, res) => {
+  try {
+    const { email } = req.body;
+    if (!email) return res.status(400).json({ error: 'Email is required.' });
+
+    const respond = () => res.json({ ok: true, message: 'If an account exists for this email, a reset link has been sent.' });
+
+    const user = await User.findOne({ email: email.toLowerCase() });
+    if (!user) return respond();
+
+    if (!(await isSmtpConfigured())) {
+      return res.status(503).json({ error: 'Email is not configured. Please try again later.' });
+    }
+
+    user.resetToken = crypto.randomBytes(32).toString('base64url');
+    user.resetTokenExpires = new Date(Date.now() + RESET_TTL_MS);
+    await user.save();
+
+    const ctx = await getSiteContext();
+    try {
+      await sendPasswordResetEmail(user, ctx);
+    } catch (e) {
+      console.error('Password reset email failed:', e.message);
+    }
+    respond();
+  } catch (err) {
+    console.error('Forgot password error:', err);
+    res.status(500).json({ error: 'Server error.' });
+  }
+});
+
+// Complete a password reset
+router.post('/reset-password', async (req, res) => {
+  try {
+    const { token, password } = req.body;
+    if (!token || !password) {
+      return res.status(400).json({ error: 'Token and new password are required.' });
+    }
+    if (password.length < 6) {
+      return res.status(400).json({ error: 'Password must be at least 6 characters.' });
+    }
+
+    const user = await User.findOne({ resetToken: token });
+    if (!user) {
+      return res.status(400).json({ error: 'This reset link is invalid or has already been used.' });
+    }
+    if (user.resetTokenExpires && user.resetTokenExpires.getTime() < Date.now()) {
+      return res.status(400).json({
+        error: 'This reset link has expired. Please request a new one.',
+        code: 'EXPIRED',
+      });
+    }
+
+    user.password = password; // pre-save hook hashes
+    user.resetToken = undefined;
+    user.resetTokenExpires = undefined;
+    // If the account wasn't verified yet, resetting via email proves access — mark verified too
+    if (!user.emailVerified) {
+      user.emailVerified = true;
+      user.verifyToken = undefined;
+      user.verifyTokenExpires = undefined;
+    }
+    await user.save();
+
+    const jwt = generateToken(user);
+    res.json({
+      reset: true,
+      token: jwt,
+      user: { id: user._id, name: user.name, email: user.email, role: user.role, phone: user.phone },
+    });
+  } catch (err) {
+    console.error('Reset password error:', err);
     res.status(500).json({ error: 'Server error.' });
   }
 });
