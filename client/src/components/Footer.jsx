@@ -49,8 +49,13 @@ export default function Footer() {
       </div>
 
       <div className="footer__bottom">
-        <div className="container">
-          <p>&copy; {new Date().getFullYear()} Quality Wedding DJ. All rights reserved.</p>
+        <div className="container" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '0.75rem' }}>
+          <p style={{ margin: 0 }}>&copy; {new Date().getFullYear()} Quality Wedding DJ. All rights reserved.</p>
+          <p style={{ margin: 0, fontSize: '0.85rem', opacity: 0.65 }}>
+            <Link to="/areas-covered" style={{ color: 'inherit' }}>Areas Covered</Link>
+            <span style={{ margin: '0 0.5rem' }}>·</span>
+            <Link to="/venues" style={{ color: 'inherit' }}>Venues</Link>
+          </p>
         </div>
       </div>
     </footer>

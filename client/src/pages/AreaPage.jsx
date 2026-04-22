@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import SEO from '../components/SEO';
 import ScrollReveal from '../components/ScrollReveal';
 import { getAreaBySlug } from '../data/areas';
-import { getVenueBySlug } from '../data/venues';
+import { getVenueBySlug, findNearbyVenues } from '../data/venues';
 import {
   getAreaContentBlocks,
   getLocationFAQs,
@@ -68,9 +68,8 @@ export default function AreaPage() {
   const canonical = `${SITE_URL}/wedding-dj/${area.slug}`;
   const heroPoster = area.heroImage || '/assets/images/gallery-castle-party.webp';
   const ogImage = `${SITE_URL}${heroPoster}`;
-  const nearbyVenues = (area.nearbyVenues || [])
-    .map((s) => getVenueBySlug(s))
-    .filter(Boolean);
+  const manual = (area.nearbyVenues || []).map((s) => getVenueBySlug(s)).filter(Boolean);
+  const nearbyVenues = manual.length ? manual : findNearbyVenues(area, 3);
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',

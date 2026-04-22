@@ -21,6 +21,8 @@ import Register from './pages/Register';
 import Admin from './pages/Admin';
 import AreaPage from './pages/AreaPage';
 import VenuePage from './pages/VenuePage';
+import AreasCovered from './pages/AreasCovered';
+import VenuesIndex from './pages/VenuesIndex';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -54,6 +56,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/areas-covered" element={<AreasCovered />} />
+            <Route path="/venues" element={<VenuesIndex />} />
             <Route path="/wedding-dj/venues/:slug" element={<VenuePage />} />
             <Route path="/wedding-dj/:slug" element={<AreaPage />} />
           </Routes>
