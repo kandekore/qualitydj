@@ -50,21 +50,21 @@ export default function Contact() {
     <>
       <SEO
         title="Contact Quality Wedding DJ | High-End Wedding DJ Services"
-        description="Reach out to Quality Wedding DJ for premium, bespoke DJ services. Let's make your high-end wedding unforgettable. Contact us now!"
+        description="Reach out to Quality Wedding DJ for premium, bespoke DJ services. Let's make your high-end wedding unforgettable. Contact Jan now!"
         keyword="high-end wedding DJ"
       />
 
       <section className="page-hero">
         <img
           src="/assets/images/IMG_2694-768x1200.jpg"
-          alt="Contact us"
+          alt="Contact Jan"
           className="page-hero__bg"
         />
         <div className="page-hero__overlay" />
         <div className="page-hero__content">
           <h1>Let's Create Your Perfect Day</h1>
           <div className="divider" style={{ background: 'rgba(255,255,255,0.4)' }} />
-          <p>Get in touch to discover how we can elevate your wedding with our bespoke DJ services.</p>
+          <p>Get in touch to discover how Jan can elevate your wedding with bespoke DJ services.</p>
         </div>
       </section>
 
@@ -73,11 +73,11 @@ export default function Contact() {
           <div className="contact__grid">
             <ScrollReveal>
               <div className="contact__info">
-                <h2>Connect with Our Expert Team</h2>
+                <h2>Get in Touch with Jan</h2>
                 <div className="divider" style={{ margin: '1.5rem 0' }} />
                 <p>
-                  At Quality Wedding DJ, we understand that your wedding day should be nothing
-                  short of spectacular. Our team is dedicated to crafting a musical experience
+                  At Quality Wedding DJ, I understand that your wedding day should be nothing
+                  short of spectacular. I'm dedicated to crafting a musical experience
                   that perfectly complements the sophistication of your venue.
                 </p>
 
@@ -94,7 +94,7 @@ export default function Contact() {
 
                 <div className="contact__details">
                   <h3>Get in Touch</h3>
-                  <p>We look forward to discussing your needs and how we can make your dream wedding a reality.</p>
+                  <p>I look forward to discussing your needs and how I can make your dream wedding a reality.</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -157,7 +157,7 @@ export default function Contact() {
                   />
                 </div>
                 <div className="contact__field">
-                  <label htmlFor="message">Tell Us About Your Day *</label>
+                  <label htmlFor="message">Tell Me About Your Day *</label>
                   <textarea
                     id="message"
                     name="message"
@@ -173,12 +173,12 @@ export default function Contact() {
 
                 {status === 'success' && (
                   <div className="contact__status contact__status--success">
-                    Thank you for your enquiry. We'll be in touch shortly.
+                    Thank you for your enquiry. I'll be in touch shortly.
                   </div>
                 )}
                 {status === 'error' && (
                   <div className="contact__status contact__status--error">
-                    Something went wrong. Please try again or contact us directly.
+                    Something went wrong. Please try again or contact Jan directly.
                   </div>
                 )}
               </form>

@@ -96,7 +96,7 @@ export default function SpotifyPlaylist() {
     <>
       <SEO
         title="Submit Your Spotify Playlist"
-        description="Share your favourite Spotify playlists with us so we can craft the perfect soundtrack for your wedding."
+        description="Share your favourite Spotify playlists with Jan so he can craft the perfect soundtrack for your wedding."
       />
 
       <section className="page-hero">
@@ -105,7 +105,7 @@ export default function SpotifyPlaylist() {
         <div className="page-hero__content">
           <h1>Your Music, Your Way</h1>
           <div className="divider" style={{ background: 'rgba(255,255,255,0.4)' }} />
-          <p>Share your favourite playlists and let us craft the perfect soundtrack for your day.</p>
+          <p>Share your favourite playlists and let me craft the perfect soundtrack for your day.</p>
         </div>
       </section>
 
@@ -117,7 +117,7 @@ export default function SpotifyPlaylist() {
                 <h2>Sign In to Share Your Playlists</h2>
                 <div className="divider" />
                 <p>
-                  Create an account or sign in to share your Spotify playlists with us. We'll use
+                  Create an account or sign in to share your Spotify playlists with me. I'll use
                   your selections to craft a bespoke soundtrack for your wedding.
                 </p>
                 <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

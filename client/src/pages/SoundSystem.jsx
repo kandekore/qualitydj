@@ -67,10 +67,10 @@ export default function SoundSystem() {
         <div className="container">
           <ScrollReveal>
             <div className="section-header">
-              <h2>We Only Work With the Best</h2>
+              <h2>I Only Work With the Best</h2>
               <div className="divider" />
               <p>
-                All of our systems are crystal-clear Electro-Voice. Full-range stacks, columns,
+                All of my systems are crystal-clear Electro-Voice. Full-range stacks, columns,
                 subwoofers, battery-powered wireless speakers, professional Shure radio mics for
                 speeches and announcements: every piece of audio kit to cover every base on your
                 big day. Every sound system is tailored to your venue, your guests, and every

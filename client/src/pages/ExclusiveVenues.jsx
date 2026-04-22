@@ -32,9 +32,9 @@ export default function ExclusiveVenues() {
               <h2>Unmatched Elegance for Prestigious Venues</h2>
               <div className="divider" />
               <p>
-                We specialise in transforming exclusive venues into vibrant celebrations of
+                I specialise in transforming exclusive venues into vibrant celebrations of
                 love and joy. Whether you're planning your dream wedding at a historic castle,
-                a luxury hotel, or an upscale corporate location, our bespoke DJ services are
+                a luxury hotel, or an upscale corporate location, my bespoke DJ services are
                 designed to seamlessly blend with the grandeur of your chosen setting.
               </p>
             </div>
@@ -42,10 +42,10 @@ export default function ExclusiveVenues() {
 
           <div className="grid grid--2">
             {[
-              { title: 'State-of-the-Art Equipment', desc: 'Our sound systems provide crystal-clear audio that resonates perfectly in expansive venues.' },
+              { title: 'State-of-the-Art Equipment', desc: 'Jan\'s sound systems provide crystal-clear audio that resonates perfectly in expansive venues.' },
               { title: 'Tailored Playlists', desc: 'Curated selections that reflect your unique taste and enhance your event\'s ambiance.' },
-              { title: 'Professional Appearance', desc: 'Our DJs are always elegantly dressed to match the sophistication of your venue.' },
-              { title: 'Seamless Coordination', desc: 'We work closely with venue staff to ensure flawless execution of your event.' },
+              { title: 'Professional Appearance', desc: 'Jan is always elegantly dressed to match the sophistication of your venue.' },
+              { title: 'Seamless Coordination', desc: 'Jan works closely with venue staff to ensure flawless execution of your event.' },
             ].map((item, i) => (
               <ScrollReveal key={i}>
                 <div className="feature-card">
@@ -65,18 +65,18 @@ export default function ExclusiveVenues() {
               <h2>Venue Partnerships</h2>
               <div className="divider" />
               <p>
-                We are proud to be the preferred DJ service for some of the most prestigious
+                I'm proud to be the preferred DJ for some of the most prestigious
                 wedding venues across Worcestershire, Warwickshire, Herefordshire, and beyond.
-                Our deep understanding of these exceptional locations ensures we deliver a
+                My deep understanding of these exceptional locations ensures I deliver a
                 flawless experience every time.
               </p>
             </div>
           </ScrollReveal>
           <div className="grid grid--3">
             {[
-              { title: 'Castle Venues', desc: 'Historic grandeur deserves a soundtrack to match. We bring elegance and sophistication to castle celebrations.' },
-              { title: 'Luxury Hotels', desc: 'From intimate ballrooms to grand reception halls, we tailor our service to each unique hotel setting.' },
-              { title: 'Exclusive Estates', desc: 'Country estates and manor houses offer unique acoustics and atmospheres we know how to enhance beautifully.' },
+              { title: 'Castle Venues', desc: 'Historic grandeur deserves a soundtrack to match. Jan brings elegance and sophistication to castle celebrations.' },
+              { title: 'Luxury Hotels', desc: 'From intimate ballrooms to grand reception halls, Jan tailors the service to each unique hotel setting.' },
+              { title: 'Exclusive Estates', desc: 'Country estates and manor houses offer unique acoustics and atmospheres Jan knows how to enhance beautifully.' },
             ].map((item, i) => (
               <ScrollReveal key={i}>
                 <div className="feature-card">
@@ -127,7 +127,7 @@ export default function ExclusiveVenues() {
               Create Your Unique Wedding Soundtrack
             </h2>
             <p style={{ color: 'rgba(255,255,255,0.8)', maxWidth: '600px', margin: '0 auto 2rem' }}>
-              Every couple has a unique love story, and we believe your wedding soundtrack
+              Every couple has a unique love story, and I believe your wedding soundtrack
               should reflect that.
             </p>
             <Link to="/contact-us" className="btn btn--outline">

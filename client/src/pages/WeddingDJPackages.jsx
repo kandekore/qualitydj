@@ -20,7 +20,7 @@ const packages = [
   {
     name: 'All-Day Wraparound',
     tagline: 'Ceremony to last dance',
-    desc: 'Our most popular package. Complete musical coverage from the moment your first guest arrives to the final song of the night — one consistent setup, one consistent DJ, one seamless day.',
+    desc: 'My most popular package. Complete musical coverage from the moment your first guest arrives to the final song of the night — one consistent setup, one consistent DJ, one seamless day.',
     items: [
       'Ceremony music (indoor or outdoor PA)',
       'Wireless Shure radio mics for vows & readings',
@@ -79,7 +79,7 @@ export default function WeddingDJPackages() {
               <h2>Find the Right Fit for Your Day</h2>
               <div className="divider" />
               <p>
-                Every wedding is different. Our three packages are designed to cover the most
+                Every wedding is different. My three packages are designed to cover the most
                 common shapes a wedding day takes — and each one can be tailored further in
                 conversation. Transparent, flexible, and centred entirely on what you actually
                 need.
@@ -161,7 +161,7 @@ export default function WeddingDJPackages() {
               Not Sure Which Package Fits?
             </h2>
             <p style={{ color: 'rgba(255,255,255,0.85)', maxWidth: '600px', margin: '0 auto 2rem' }}>
-              Every couple is different. Get in touch for a no-pressure consultation and we'll
+              Every couple is different. Get in touch for a no-pressure consultation and I'll
               help you work out exactly what you need.
             </p>
             <Link to="/contact-us" className="btn btn--outline">

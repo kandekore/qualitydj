@@ -47,7 +47,7 @@ const mixingPillars = [
   },
   {
     title: 'Bespoke Soundtrack',
-    desc: "We don't use pre-made playlists or fixed routines. Your music is planned collaboratively, mixed live on the night, and adapted in real time. Modern, classic, alternative, or a blend — your wedding soundtrack will feel authentic and considered.",
+    desc: "I don't use pre-made playlists or fixed routines. Your music is planned collaboratively, mixed live on the night, and adapted in real time. Modern, classic, alternative, or a blend — your wedding soundtrack will feel authentic and considered.",
   },
   {
     title: 'Reactive to the Dancefloor',
@@ -133,10 +133,10 @@ export default function DJServices() {
                 <h3>First Dance</h3>
                 <div className="divider" style={{ margin: '1rem 0' }} />
                 <p>
-                  We are very experienced at first dances. We can build the tension to breaking
+                  I'm very experienced at first dances. I can build the tension to breaking
                   point if you want the limelight, or subtly prompt your first dance — maybe
                   inviting your guests to join you after a short photo segment, leaving you less
-                  exposed. Whatever we do, it will suit your vibe and create real joy and energy
+                  exposed. Whatever I do, it will suit your vibe and create real joy and energy
                   in which to feel the love in the room.
                 </p>
               </div>
@@ -148,11 +148,11 @@ export default function DJServices() {
               <div className="dj__text-block">
                 <h3>Introductions & Announcements</h3>
                 <p>
-                  We cover every announcement expected on the day and we're happy liaising with
-                  venues, caterers, and other entertainers to ensure all bases are covered. We are
+                  I cover every announcement expected on the day and I'm happy liaising with
+                  venues, caterers, and other entertainers to ensure all bases are covered. I'm
                   skilled at introducing people into your breakfast or evening reception — letting
-                  everyone enter with their theme tune blasting. We whoop it up. We generate energy.
-                  We fill the room with love.
+                  everyone enter with their theme tune blasting. I whoop it up. I generate energy.
+                  I fill the room with love.
                 </p>
               </div>
             </ScrollReveal>

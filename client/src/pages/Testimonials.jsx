@@ -180,7 +180,7 @@ export default function Testimonials() {
         <div className="page-hero__content">
           <h1>Real Stories, Real Weddings</h1>
           <div className="divider" style={{ background: 'rgba(255,255,255,0.4)' }} />
-          <p>Rated {avgRating}/5 by {testimonials.length} real couples who put their trust in us.</p>
+          <p>Rated {avgRating}/5 by {testimonials.length} real couples who put their trust in Jan.</p>
         </div>
       </section>
 
@@ -191,9 +191,9 @@ export default function Testimonials() {
               <h2>Real Stories from Brides and Grooms</h2>
               <div className="divider" />
               <p>
-                All of the following are real testimonials from real people for whom we have had
+                All of the following are real testimonials from real people for whom I have had
                 the honour of being entrusted to provide the entertainment at their weddings.
-                Every review we have ever had in every location has been 5 stars bar one — and
+                Every review I have ever had in every location has been 5 stars bar one — and
                 that was 4.5 due to a tech failure.
               </p>
             </div>

@@ -10,19 +10,19 @@ const faqs = [
     items: [
       {
         q: 'Do you work exclusively as a wedding DJ?',
-        a: "Yes. We don't do birthdays, anniversaries, corporates, wakes, or engagements — we only do weddings. Because we do them with style and panache, making them joyful, full of laughter, fun, and truly memorable. That's why we don't need to do anything else.",
+        a: "Yes. I don't do birthdays, anniversaries, corporates, wakes, or engagements — I only do weddings. Because I do them with style and panache, making them joyful, full of laughter, fun, and truly memorable. That's why I don't need to do anything else.",
       },
       {
-        q: 'Will we meet our DJ before the wedding?',
+        q: 'Will I meet my DJ before the wedding?',
         a: "Absolutely. You work directly with Jan Blazak from the very first conversation through to the final song of the night. A face-to-face meeting is available if you'd like that extra reassurance. There are no handovers, agencies, or substitute DJs.",
       },
       {
-        q: 'How far in advance should we book?',
-        a: "Popular dates (especially Saturdays in peak wedding season) book up a year or more in advance. We'd recommend getting in touch as soon as you've settled on your venue and date — even if details are still flexible.",
+        q: 'How far in advance should I book?',
+        a: "Popular dates (especially Saturdays in peak wedding season) book up a year or more in advance. I'd recommend getting in touch as soon as you've settled on your venue and date — even if details are still flexible.",
       },
       {
         q: 'What areas do you cover?',
-        a: 'Our home territory is Worcestershire, Warwickshire, and Herefordshire, but we regularly travel further afield for the right wedding. Get in touch with your venue details and we\'ll confirm.',
+        a: 'My home territory is Worcestershire, Warwickshire, and Herefordshire, but I regularly travel further afield for the right wedding. Get in touch with your venue details and I\'ll confirm.',
       },
     ],
   },
@@ -31,15 +31,15 @@ const faqs = [
     items: [
       {
         q: 'Do you use playlists or mix live?',
-        a: "All music is mixed live — every transition, every track timed to the energy in the room. We don't rely on pre-recorded sets or automated playlists. Live mixing allows us to adapt to your guests, maintain energy, and create a natural flow throughout the evening.",
+        a: "All music is mixed live — every transition, every track timed to the energy in the room. I don't rely on pre-recorded sets or automated playlists. Live mixing allows me to adapt to your guests, maintain energy, and create a natural flow throughout the evening.",
       },
       {
-        q: 'Can we choose our own music?',
+        q: 'Can I choose my own music?',
         a: "Yes — and you're encouraged to. Share your must-play songs, favourite genres, first dance, and do-not-play requests. Your preferences come first and guide the entire music plan. It is YOUR wedding. You will be listening to YOUR soundtrack.",
       },
       {
         q: 'Do you take guest requests on the night?',
-        a: 'Guest requests are welcomed and blended into the flow where appropriate — but they will never override your wishes. We carefully balance requests with your music plan and the overall energy of the evening.',
+        a: 'Guest requests are welcomed and blended into the flow where appropriate — but they will never override your wishes. I carefully balance requests with your music plan and the overall energy of the evening.',
       },
       {
         q: 'How big is your music library?',
@@ -47,7 +47,7 @@ const faqs = [
       },
       {
         q: 'Can you handle specific genres like drum and bass, country, or something niche?',
-        a: "Yes. We've done country western weddings, drum and bass weddings, and everything in between. If it's the soundtrack that reflects you as a couple, we'll make it work.",
+        a: "Yes. I've done country western weddings, drum and bass weddings, and everything in between. If it's the soundtrack that reflects you as a couple, I'll make it work.",
       },
     ],
   },
@@ -60,7 +60,7 @@ const faqs = [
       },
       {
         q: 'Can you provide music for an outdoor ceremony?',
-        a: "Yes. Our EV Everse 12 speakers are fully battery-powered and wireless, so we can set up in gardens, courtyards, or anywhere that doesn't have power nearby — without compromising on sound quality.",
+        a: "Yes. My EV Everse 12 speakers are fully battery-powered and wireless, so I can set up in gardens, courtyards, or anywhere that doesn't have power nearby — without compromising on sound quality.",
       },
       {
         q: 'Do you provide microphones for speeches?',
@@ -68,11 +68,11 @@ const faqs = [
       },
       {
         q: 'What does the DJ booth look like?',
-        a: "We offer two setups: an elegant white Humpter B1 booth with matching moving-head podiums (perfect for castles and modern venues), and a custom rustic booth crafted from recycled wood with a signature illuminated heart (perfect for barns, boho, and vintage-style weddings).",
+        a: "I offer two setups: an elegant white Humpter B1 booth with matching moving-head podiums (perfect for castles and modern venues), and a custom rustic booth crafted from recycled wood with a signature illuminated heart (perfect for barns, boho, and vintage-style weddings).",
       },
       {
         q: 'What if something goes wrong with the equipment?',
-        a: 'We carry spares of everything. Full backup systems are built into every setup — every base and eventuality covered. You won\'t know if there\'s an issue because we\'ll have already solved it.',
+        a: 'I carry spares of everything. Full backup systems are built into every setup — every base and eventuality covered. You won\'t know if there\'s an issue because I\'ll have already solved it.',
       },
     ],
   },
@@ -93,7 +93,7 @@ const faqs = [
       },
       {
         q: 'Are cold spark machines safe for indoor venues?',
-        a: "Yes. Cold sparks produce no heat, no smoke, and no flame — they're venue-approved for the vast majority of indoor spaces. We have ten sleek white units available.",
+        a: "Yes. Cold sparks produce no heat, no smoke, and no flame — they're venue-approved for the vast majority of indoor spaces. I have ten sleek white units available.",
       },
       {
         q: 'What is laser sign writing?',
@@ -147,7 +147,7 @@ export default function FAQ() {
     <>
       <SEO
         title="Wedding DJ FAQs | Your Questions Answered"
-        description="Answers to the most common questions about our wedding DJ services — booking, music, equipment, lighting, extras, and more."
+        description="Answers to the most common questions about my wedding DJ services — booking, music, equipment, lighting, extras, and more."
         keyword="wedding DJ FAQ, wedding DJ questions"
       />
 
@@ -165,7 +165,7 @@ export default function FAQ() {
         <div className="page-hero__content">
           <h1>Frequently Asked Questions</h1>
           <div className="divider" style={{ background: 'rgba(255,255,255,0.4)' }} />
-          <p>Got questions? We've tried to answer the most common ones below.</p>
+          <p>Got questions? I've tried to answer the most common ones below.</p>
         </div>
       </section>
 
@@ -194,8 +194,8 @@ export default function FAQ() {
               Still Have Questions?
             </h2>
             <p style={{ color: 'rgba(255,255,255,0.8)', maxWidth: '600px', margin: '0 auto 2rem' }}>
-              We're ever so friendly and only too happy to discuss our services. Mainly because
-              we like to get things right.
+              I'm ever so friendly and only too happy to discuss my services. Mainly because
+              I like to get things right.
             </p>
             <Link to="/contact-us" className="btn btn--outline">
               Get in Touch

@@ -36,18 +36,17 @@ export default function About() {
             </ScrollReveal>
             <ScrollReveal>
               <div className="about__text">
-                <h2>Our Commitment to Excellence</h2>
+                <h2>My Commitment to Excellence</h2>
                 <div className="divider" style={{ margin: '1.5rem 0' }} />
                 <p>
-                  At Quality Wedding DJ, we understand that your wedding day is one of the most
-                  important occasions of your life. Our mission is to elevate your celebration
+                  At Quality Wedding DJ, I understand that your wedding day is one of the most
+                  important occasions of your life. My mission is to elevate your celebration
                   with a musical experience that is as unique and memorable as your love story.
                 </p>
                 <p>
-                  Led by experienced wedding DJ Jan Blazak, with over 15 years of experience across
-                  radio, clubs, festivals, and private events, we specialise in crafting personalised
-                  music experiences that reflect your personal taste and the distinctive atmosphere
-                  of your event.
+                  With over 15 years of experience across radio, clubs, festivals, and private
+                  events, DJ Jan Blazak specialises in crafting personalised music experiences
+                  that reflect your personal taste and the distinctive atmosphere of your event.
                 </p>
                 <p>
                   Rather than following trends or rigid formats, Jan focuses on what truly works:
@@ -69,10 +68,10 @@ export default function About() {
           </ScrollReveal>
           <div className="grid grid--2">
             {[
-              { title: 'Unmatched Expertise', desc: 'Our DJs are seasoned professionals who bring years of experience to your event, ensuring every moment is perfectly orchestrated.' },
-              { title: 'State-of-the-Art Equipment', desc: 'We use cutting-edge technology to deliver crystal-clear sound and stunning visual lighting effects that enhance the elegance of your venue.' },
-              { title: 'Tailored Musical Experiences', desc: 'We work closely with you to craft playlists that resonate with your style, ensuring every song played is meaningful and memorable.' },
-              { title: 'Professional Presentation', desc: 'Our DJs dress in tailored suits, embodying the sophistication and elegance of your high-end wedding.' },
+              { title: 'Unmatched Expertise', desc: 'Jan is a seasoned professional who brings years of experience to your event, ensuring every moment is perfectly orchestrated.' },
+              { title: 'State-of-the-Art Equipment', desc: 'Jan uses cutting-edge technology to deliver crystal-clear sound and stunning visual lighting effects that enhance the elegance of your venue.' },
+              { title: 'Tailored Musical Experiences', desc: 'Jan works closely with you to craft playlists that resonate with your style, ensuring every song played is meaningful and memorable.' },
+              { title: 'Professional Presentation', desc: 'Jan dresses in a tailored suit, embodying the sophistication and elegance of your high-end wedding.' },
             ].map((item, i) => (
               <ScrollReveal key={i}>
                 <div className="feature-card">
@@ -92,8 +91,8 @@ export default function About() {
               <h2>Exclusive Client Experiences</h2>
               <div className="divider" />
               <p>
-                Our clients include celebrities, business executives, and professional athletes
-                who seek excellence and exclusivity. They trust us to deliver a musical backdrop
+                Jan's clients include celebrities, business executives, and professional athletes
+                who seek excellence and exclusivity. They trust him to deliver a musical backdrop
                 that complements the grandeur of their wedding venue.
               </p>
             </div>
@@ -105,11 +104,11 @@ export default function About() {
         <div className="container">
           <ScrollReveal>
             <div className="section-header">
-              <h2>Our Process</h2>
+              <h2>Jan's Process</h2>
               <div className="divider" style={{ background: 'rgba(255,255,255,0.3)' }} />
               <p style={{ color: 'rgba(255,255,255,0.8)' }}>
-                We begin with an in-depth consultation to understand your vision and musical
-                preferences. Throughout the planning process, we maintain open communication,
+                Jan begins with an in-depth consultation to understand your vision and musical
+                preferences. Throughout the planning process, he maintains open communication,
                 coordinating with your venue and other vendors to ensure everything aligns
                 perfectly on your special day.
               </p>

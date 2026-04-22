@@ -7,13 +7,13 @@ const mainLightShow = [
     title: 'Spectacular Main Light Show',
     stat: '20+',
     statLabel: 'Professional fixtures',
-    desc: "Our main light show contains at least 20 professional lighting fixtures, generally battery operated and wirelessly configured. This creates true versatility and ensures we always deliver a pleasing audio-visual display — sound-coordinated, with a range of spectacular effects. From demure and sophisticated to full-on rave.",
+    desc: "My main light show contains at least 20 professional lighting fixtures, generally battery operated and wirelessly configured. This creates true versatility and ensures I always deliver a pleasing audio-visual display — sound-coordinated, with a range of spectacular effects. From demure and sophisticated to full-on rave.",
   },
   {
     title: 'Moving Heads',
     stat: '12',
     statLabel: 'Moving head fixtures',
-    desc: 'A range of up to twelve professional moving head fixtures that generate huge energy and wow on the dance floor. We generally use four in any one show but will supply whatever takes your fancy and make it rock for you.',
+    desc: 'A range of up to twelve professional moving head fixtures that generate huge energy and wow on the dance floor. I generally use four in any one show but will supply whatever takes your fancy and make it rock for you.',
   },
   {
     title: 'External Up Lighters',
@@ -25,7 +25,7 @@ const mainLightShow = [
     title: 'Colour Schemes',
     stat: 'Bespoke',
     statLabel: 'Matched to your day',
-    desc: 'If you have a defined or general colour scheme we can ensure our lights provide those static colours early doors, with the actual shows reflecting them later on. Seamless transitions from soft, romantic daytime tones to a vibrant evening dancefloor.',
+    desc: 'If you have a defined or general colour scheme I can ensure my lights provide those static colours early doors, with the actual shows reflecting them later on. Seamless transitions from soft, romantic daytime tones to a vibrant evening dancefloor.',
   },
 ];
 
@@ -58,7 +58,7 @@ const addons = [
     title: 'Smoke & Haze',
     stat: '',
     statLabel: '',
-    desc: "Although smoke and haze undoubtedly enhance any lighting show, many venues won't allow them due to fire alarm concerns. We're happy to add this to your show free of charge if your venue permits. Makes a barn or marquee look exceptional.",
+    desc: "Although smoke and haze undoubtedly enhance any lighting show, many venues won't allow them due to fire alarm concerns. I'm happy to add this to your show free of charge if your venue permits. Makes a barn or marquee look exceptional.",
   },
   {
     title: 'Extra DJ Time',
@@ -98,7 +98,7 @@ export default function LightingExtras() {
               <h2>Lighting That Transforms Your Venue</h2>
               <div className="divider" />
               <p>
-                Subtle, stylish, and carefully matched to your décor, our lighting adds elegance
+                Subtle, stylish, and carefully matched to your décor, my lighting adds elegance
                 without overpowering your setting. From soft, romantic daytime tones to a vibrant
                 evening dancefloor, every transition is seamless. Professionally installed and
                 completely venue-friendly — designed to look as stunning as it feels.
@@ -194,7 +194,7 @@ export default function LightingExtras() {
                   with professional cold spark machines. Completely safe and venue-friendly, they
                   create stunning fountains of sparkling light without heat, smoke, or mess.
                   Perfect for recreating the magic of handheld sparklers — only bigger, brighter,
-                  and more reliable — our ten sleek white units deliver a clean, elegant look
+                  and more reliable — my ten sleek white units deliver a clean, elegant look
                   that complements your styling while creating unforgettable, photo-worthy moments.
                 </p>
               </div>
@@ -272,7 +272,7 @@ export default function LightingExtras() {
               <h2>Two Elegant Setups Fit For Your Wedding</h2>
               <div className="divider" />
               <p>
-                Our stylish DJ setups are designed to complement your wedding aesthetic, not
+                My stylish DJ setups are designed to complement your wedding aesthetic, not
                 compete with it. Clean lines, modern finishes, and thoughtfully presented
                 equipment ensure everything looks as beautiful as it sounds.
               </p>
@@ -283,7 +283,7 @@ export default function LightingExtras() {
               <div className="feature-card">
                 <h3>Elegant White — Humpter B1 Booth & Podiums</h3>
                 <p>
-                  Our elegant white Humpter B1 booth paired with four matching moving head podiums
+                  My elegant white Humpter B1 booth paired with four matching moving head podiums
                   creates a sleek, high-end centrepiece for your evening reception. The clean,
                   all-white finish blends beautifully with modern wedding styling, while the
                   elevated lighting adds depth, movement, and a subtle wow factor. A refined,
@@ -295,7 +295,7 @@ export default function LightingExtras() {
               <div className="feature-card">
                 <h3>Rustic DJ Booth & Podiums</h3>
                 <p>
-                  Our custom-built rustic DJ booth, crafted from recycled wood and paired with
+                  My custom-built rustic DJ booth, crafted from recycled wood and paired with
                   four matching podiums, brings warm characterful charm to your wedding evening.
                   Soft white LED lighting adds subtle sparkle, while the signature illuminated
                   heart creates a beautiful focal point for your dancefloor. Perfect for barn,
@@ -323,7 +323,7 @@ export default function LightingExtras() {
             Crafted from recycled wood. The heart of your dancefloor.
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.85)', maxWidth: '560px', margin: '0 auto 2rem' }}>
-            Our signature rustic booth with its illuminated heart — made for barn, boho, and
+            My signature rustic booth with its illuminated heart — made for barn, boho, and
             vintage-style weddings.
           </p>
           <Link to="/contact-us" className="btn btn--outline">
@@ -339,7 +339,7 @@ export default function LightingExtras() {
               <h2>Ready to Transform Your Venue?</h2>
               <div className="divider" style={{ background: 'rgba(255,255,255,0.3)' }} />
               <p style={{ color: 'rgba(255,255,255,0.8)' }}>
-                Contact us to discuss how our lighting and extras can make your wedding day
+                Get in touch to discuss how my lighting and extras can make your wedding day
                 extraordinary. Many services are available independently — perfect for couples
                 using live bands, venue DJs, or alternative entertainment.
               </p>

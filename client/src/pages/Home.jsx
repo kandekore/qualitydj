@@ -10,19 +10,19 @@ import './Home.css';
 
 const slides = [
   {
-    video: '/assets/videos/freecompress-castle2-1.mp4',
+    video: '/assets/videos/freecompress-castle2-1-v2.mp4',
     poster: '/assets/images/gallery-castle-party.jpg',
     slogan: 'Elevate Your Wedding with Elegance',
   },
   {
-    video: '/assets/videos/freecompress-tent2-3.mp4',
+    video: '/assets/videos/freecompress-tent2-3-v2.mp4',
     poster: '/assets/images/gallery-white-tent-setup.jpg',
     slogan: 'Ready for a Night to Remember?',
   },
   {
-    video: '/assets/videos/freecompress-conga2.mp4',
+    video: '/assets/videos/freecompress-conga2-v2.mp4',
     poster: '/assets/images/gallery-bride-dancing.jpg',
-    slogan: 'Dance into Luxury with Us',
+    slogan: 'Dance into Luxury with Me',
   },
 ];
 
@@ -140,7 +140,7 @@ const signatureMoments = [
   {
     img: '/assets/images/adobe/adobestock_137506782.webp',
     title: 'First Dance',
-    desc: "Build tension to breaking point, or subtly prompt the moment and let guests join after a short photo segment. Whatever suits your vibe — we create the joy and energy for you to feel the love in the room.",
+    desc: "Build tension to breaking point, or subtly prompt the moment and let guests join after a short photo segment. Whatever suits your vibe — I create the joy and energy for you to feel the love in the room.",
     link: '/dj-services',
   },
   {
@@ -160,27 +160,27 @@ const signatureMoments = [
 const faqs = [
   {
     q: 'Do you work exclusively as a wedding DJ?',
-    a: 'Yes. While our background includes radio, clubs, and live events, our focus today is entirely on weddings. This allows us to understand the flow, etiquette, and atmosphere that make wedding celebrations feel seamless and memorable.',
+    a: 'Yes. While my background includes radio, clubs, and live events, my focus today is entirely on weddings. This allows me to understand the flow, etiquette, and atmosphere that make wedding celebrations feel seamless and memorable.',
   },
   {
-    q: 'Will we meet our DJ before the wedding?',
+    q: 'Will I meet my DJ before the wedding?',
     a: 'Absolutely. You work directly with your DJ from the very first conversation through to the final song of the night. There are no handovers, agencies, or substitute DJs.',
   },
   {
     q: 'Do you use playlists or mix live?',
-    a: "All music is mixed live. We don't rely on pre-recorded sets or automated playlists. Live mixing allows us to adapt to your guests, maintain energy, and create a natural flow throughout the evening.",
+    a: "All music is mixed live. I don't rely on pre-recorded sets or automated playlists. Live mixing allows me to adapt to your guests, maintain energy, and create a natural flow throughout the evening.",
   },
   {
-    q: 'Can we choose our own music?',
+    q: 'Can I choose my own music?',
     a: "Yes. You're encouraged to share must-play songs, favourite genres, and do-not-play requests. Your preferences always come first and guide the entire music plan.",
   },
   {
     q: 'Do you take guest requests on the night?',
-    a: 'Guest requests are welcome where appropriate, but they will never override your wishes. We carefully balance requests with your music plan and the overall flow of the evening.',
+    a: 'Guest requests are welcome where appropriate, but they will never override your wishes. I carefully balance requests with your music plan and the overall flow of the evening.',
   },
   {
     q: 'What equipment do you provide?',
-    a: 'We provide professional-grade sound systems, elegant DJ booths, and atmospheric lighting as standard. All equipment is venue-friendly, discreetly installed, and fully backed up for peace of mind.',
+    a: 'I provide professional-grade sound systems, elegant DJ booths, and atmospheric lighting as standard. All equipment is venue-friendly, discreetly installed, and fully backed up for peace of mind.',
   },
 ];
 
@@ -245,6 +245,7 @@ function FAQItem({ q, a }) {
 
 export default function Home() {
   const videoRefs = useRef([]);
+  const bannerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
@@ -259,6 +260,24 @@ export default function Home() {
       }
     });
   }, [activeIndex]);
+
+  useEffect(() => {
+    const video = bannerRef.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (video.preload === 'none') video.preload = 'auto';
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
@@ -307,7 +326,7 @@ export default function Home() {
                       Request a Consultation
                     </Link>
                     <Link to="/dj-services" className="btn btn--accent">
-                      Our Services
+                      My Services
                     </Link>
                   </div>
                 </div>
@@ -335,11 +354,11 @@ export default function Home() {
                   aesthetic. A setup as elegant as the occasion.
                 </p>
                 <p>
-                  At Let The Music Play Limited, we provide professional wedding DJ services
+                  At Let The Music Play Limited, I provide professional wedding DJ services
                   designed entirely around you, your guests, and the atmosphere you want to create.
                 </p>
                 <p>
-                  Led by experienced wedding DJ Jan Blazak, we specialise in bespoke music
+                  With over 15 years of experience as a wedding DJ, I specialise in bespoke music
                   planning, live DJ mixing, and elegant wedding setups that look as good as they
                   sound.
                 </p>
@@ -391,7 +410,7 @@ export default function Home() {
           <ScrollReveal>
             <div className="services-header">
               <div className="services-header__left">
-                <span className="section-tag">Our Services</span>
+                <span className="section-tag">My Services</span>
                 <h2>Elegant solutions for every detail of your big day.</h2>
               </div>
               <Link to="/dj-services" className="btn btn--primary">
@@ -430,8 +449,8 @@ export default function Home() {
         </div>
         <div className="premium-section__content">
           <ScrollReveal>
-            <span className="section-tag">Why Choose Us</span>
-            <h2>We provide premium sound systems</h2>
+            <span className="section-tag">Why Choose Jan</span>
+            <h2>I provide premium sound systems</h2>
             <p>
               Stylish white or Rustic DJ booths, atmospheric lighting, and optional enhancements
               such as uplighting, dry ice, laser sign writing, and cold spark machines.
@@ -537,16 +556,17 @@ export default function Home() {
       {/* Full-width video banner CTA */}
       <section className="home__banner">
         <video
-          src="/assets/videos/119431_img-2693-172838102348671.mp4"
-          autoPlay
+          ref={bannerRef}
+          src="/assets/videos/119431_img-2693-172838102348671-v2.mp4"
           muted
           loop
           playsInline
+          preload="none"
           className="home__banner-video"
         />
         <div className="home__banner-overlay" />
         <div className="home__banner-content">
-          <h2>From planning to perfection, we're here to make it seamless.</h2>
+          <h2>From planning to perfection, I'm here to make it seamless.</h2>
           <Link to="/contact-us" className="btn btn--outline" style={{ marginTop: '2rem' }}>
             Get Started
           </Link>
@@ -558,7 +578,7 @@ export default function Home() {
         <div className="container">
           <ScrollReveal>
             <div className="section-header">
-              <h2>Real stories from brides and grooms who partied with us</h2>
+              <h2>Real stories from brides and grooms who partied with Jan</h2>
               <div className="divider" />
             </div>
           </ScrollReveal>
@@ -611,11 +631,11 @@ export default function Home() {
                 <h2>Frequently Asked Questions</h2>
                 <div className="divider" style={{ margin: '1.5rem 0' }} />
                 <p>
-                  Everything you need to know about our wedding DJ services.
+                  Everything you need to know about my wedding DJ services.
                   Can't find what you're looking for? Get in touch.
                 </p>
                 <Link to="/contact-us" className="btn btn--primary" style={{ marginTop: '1.5rem' }}>
-                  Contact Us
+                  Contact Jan
                 </Link>
               </div>
             </ScrollReveal>

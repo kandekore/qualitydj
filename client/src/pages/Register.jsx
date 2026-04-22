@@ -61,7 +61,7 @@ export default function Register() {
       <div className="auth-page">
         <div className="auth-card auth-card--wide">
           <h2>Create Your Account</h2>
-          <p className="auth-subtitle">Tell us about your big day</p>
+          <p className="auth-subtitle">Tell me about your big day</p>
 
           {error && <div className="auth-error">{error}</div>}
 

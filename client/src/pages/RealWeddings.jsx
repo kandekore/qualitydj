@@ -34,7 +34,7 @@ export default function RealWeddings() {
               <div className="divider" />
               <p>
                 From country western barn weddings to drum-and-bass raves, castle ceremonies to
-                relaxed garden receptions — these are the real weddings we've had the honour of
+                relaxed garden receptions — these are the real weddings I've had the honour of
                 providing the entertainment for. Each one planned collaboratively and mixed live
                 on the night.
               </p>
