@@ -1,0 +1,45 @@
+# Quality Wedding DJ
+
+> Professional wedding DJ services by Jan Blazak, covering Worcestershire, Warwickshire, Herefordshire, Gloucestershire, the West Midlands and the Cotswolds. 15+ years' experience, 250+ weddings, live DJ mixing, premium Electro-Voice sound, and atmospheric lighting.
+
+Quality Wedding DJ is a single-DJ specialist wedding service (not an agency). All bookings are performed personally by Jan Blazak. The site lists service details, packages, real wedding case studies, venue information, and area coverage across the West Midlands region of the UK.
+
+## Core pages
+
+- [Home](https://qualityweddingdj.co.uk/): Overview of services, highlights, and booking call-to-action.
+- [About](https://qualityweddingdj.co.uk/about-us): Background on Jan Blazak and the Quality Wedding DJ approach.
+- [DJ Services](https://qualityweddingdj.co.uk/dj-services): What's included in a wedding DJ booking.
+- [Wedding DJ Packages](https://qualityweddingdj.co.uk/wedding-dj-packages): Package tiers and pricing structure.
+- [Sound System](https://qualityweddingdj.co.uk/sound-system): Electro-Voice PA and audio equipment details.
+- [Lighting & Extras](https://qualityweddingdj.co.uk/lighting-extras): Dance-floor lighting, uplighting, and add-on options.
+- [FAQ](https://qualityweddingdj.co.uk/faq): Common questions about booking, setup, and the day itself.
+- [Contact](https://qualityweddingdj.co.uk/contact-us): Enquiry form and direct contact details.
+
+## Social proof
+
+- [Real Weddings](https://qualityweddingdj.co.uk/real-weddings): Case studies from past weddings, including themes, venues, and music choices.
+- [Testimonials](https://qualityweddingdj.co.uk/testimonials): Reviews from couples.
+
+## Venues and areas
+
+- [Exclusive Venues](https://qualityweddingdj.co.uk/exclusive-venues): Venues where Jan is a recommended or preferred supplier.
+- [All Venues](https://qualityweddingdj.co.uk/venues): Index of venues Jan has performed at.
+- [Areas Covered](https://qualityweddingdj.co.uk/areas-covered): Full list of regions and towns serviced.
+
+### Counties served
+- [West Midlands](https://qualityweddingdj.co.uk/wedding-dj/west-midlands)
+- [Worcestershire](https://qualityweddingdj.co.uk/wedding-dj/worcestershire)
+- [Warwickshire](https://qualityweddingdj.co.uk/wedding-dj/warwickshire)
+- [Herefordshire](https://qualityweddingdj.co.uk/wedding-dj/herefordshire)
+- [Gloucestershire](https://qualityweddingdj.co.uk/wedding-dj/gloucestershire)
+- [Shropshire](https://qualityweddingdj.co.uk/wedding-dj/shropshire)
+- [Cotswolds](https://qualityweddingdj.co.uk/wedding-dj/cotswolds)
+
+## Tools
+
+- [Spotify Playlist Builder](https://qualityweddingdj.co.uk/spotify-playlist): Collaborative playlist tool couples can use to share song preferences ahead of their wedding.
+
+## Reference
+
+- [Sitemap](https://qualityweddingdj.co.uk/sitemap.xml): Full URL index, including per-town area pages and individual real-wedding case studies.
+- [robots.txt](https://qualityweddingdj.co.uk/robots.txt): Crawler policy — all major search and AI crawlers (GPTBot, Google-Extended, CCBot, anthropic-ai, claudebot, Bytespider) are explicitly allowed.
