@@ -1,118 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://qualityweddingdj.co.uk/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/about-us</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/dj-services</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/sound-system</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/lighting-extras</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/wedding-dj-packages</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/real-weddings</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/real-weddings/olivia-sax-surprise</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/real-weddings/rawlings-country-western</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/real-weddings/holli-drum-and-bass</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/real-weddings/caroline-rustic</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/real-weddings/luke-wedding</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/real-weddings/edwards-wedding</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/real-weddings/ieuan-wedding</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/real-weddings/darren-mixed-crowd</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/real-weddings/bea-wedding</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/real-weddings/aaron-wedding</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/real-weddings/green-wedding</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/real-weddings/relaxed-wedding</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/testimonials</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/faq</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/contact-us</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://qualityweddingdj.co.uk/exclusive-venues</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <url><loc>https://qualityweddingdj.co.uk/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/about-us</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/dj-services</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/sound-system</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/lighting-extras</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/wedding-dj-packages</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/real-weddings</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/real-weddings/olivia-sax-surprise</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/real-weddings/rawlings-country-western</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/real-weddings/holli-drum-and-bass</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/real-weddings/caroline-rustic</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/real-weddings/luke-wedding</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/real-weddings/edwards-wedding</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/real-weddings/ieuan-wedding</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/real-weddings/darren-mixed-crowd</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/real-weddings/bea-wedding</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/real-weddings/aaron-wedding</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/real-weddings/green-wedding</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/real-weddings/relaxed-wedding</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/testimonials</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/faq</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/contact-us</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/exclusive-venues</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/wedding-dj/west-midlands
+worcestershire
+herefordshire
+gloucestershire
+warwickshire
+shropshire
+south-gloucestershire
+cotswolds
+worcester
+redditch
+kidderminster
+bromsgrove
+malvern
+evesham
+droitwich-spa
+stourport-on-severn
+catshill
+bewdley
+pershore
+hagley
+hollywood
+hereford
+leominster
+ross-on-wye
+ledbury
+gloucester
+cheltenham
+stroud
+tewkesbury
+cirencester
+coleford
+lydney
+birmingham
+solihull
+wolverhampton
+dudley
+stourbridge
+halesowen
+smethwick
+stratford-upon-avon
+warwick
+royal-leamington-spa
+nuneaton
+rugby
+alcester
+shrewsbury
+bridgnorth
+ludlow
+telford
+stafford
+cannock
+lichfield
+burton-upon-trent</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://qualityweddingdj.co.uk/wedding-dj/venues/eastnor-castle</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

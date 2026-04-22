@@ -163,8 +163,8 @@ export default function WeddingDJPackages() {
               { src: '/assets/images/adobe/adobestock_1841384988.webp', alt: 'Two brides at golden hour', tag: 'Love is love' },
               { src: '/assets/images/adobe/adobestock_762134491.webp', alt: 'Black bride and groom celebrating', tag: 'Joyful first dance' },
               { src: '/assets/images/adobe/adobestock_1966018059.webp', alt: 'Two grooms at a floral arch', tag: 'Two grooms' },
-              { src: '/assets/images/adobe/adobestock_226243526.webp', alt: 'Couple in a dry-ice first dance', tag: 'Dry ice moment' },
-              { src: '/assets/images/adobe/adobestock_567551298.webp', alt: 'Couple in a thick dry-ice cloud', tag: 'Dancing on the clouds' },
+              { src: '/assets/images/white-rig-square.webp', alt: 'Elegant white DJ booth with Mr & Mrs facade', tag: 'Elegant white setup' },
+              { src: '/assets/images/gallery-first-dance.webp', alt: 'Bride and groom sharing their first dance', tag: 'First dance' },
               { src: '/assets/images/adobe/adobestock_137506782.webp', alt: 'Couple sharing their first dance', tag: 'First dance' },
             ].map((img, i) => (
               <ScrollReveal key={i}>
