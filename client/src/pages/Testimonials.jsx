@@ -162,7 +162,7 @@ export default function Testimonials() {
     <>
       <SEO
         title="Wedding DJ Reviews & Testimonials"
-        description={`Read ${testimonials.length} real 5-star wedding reviews for Jan Blazak at Let The Music Play. Country western, drum and bass, castle weddings, rustic barns and more.`}
+        description={`Read ${testimonials.length} real 5-star wedding reviews for Jan Blazak at Quality Wedding DJ. Country western, drum and bass, castle weddings, rustic barns and more.`}
         keyword="wedding DJ reviews, wedding DJ testimonials"
       />
 

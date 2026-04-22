@@ -282,7 +282,7 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Professional Wedding DJ Services by Let The Music Play"
+        title="Professional Wedding DJ Services by Quality Wedding DJ"
         description="Award-winning wedding DJ Jan Blazak. 250+ weddings, 15+ years, live DJ mixing, premium Electro-Voice sound, atmospheric lighting. Worcestershire, Warwickshire, Herefordshire."
         keyword="wedding DJ, luxury wedding DJ, live wedding DJ mixing, wedding DJ Worcestershire"
       />
@@ -354,7 +354,7 @@ export default function Home() {
                   aesthetic. A setup as elegant as the occasion.
                 </p>
                 <p>
-                  At Let The Music Play Limited, I provide professional wedding DJ services
+                  At Quality Wedding DJ, I provide professional wedding DJ services
                   designed entirely around you, your guests, and the atmosphere you want to create.
                 </p>
                 <p>
