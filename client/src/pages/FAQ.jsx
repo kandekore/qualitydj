@@ -157,7 +157,7 @@ export default function FAQ() {
 
       <section className="page-hero">
         <img
-          src="/assets/images/gallery-white-tent-setup.jpg"
+          src="/assets/images/gallery-white-tent-setup.webp"
           alt="Frequently Asked Questions"
           className="page-hero__bg"
         />

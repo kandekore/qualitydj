@@ -5,7 +5,7 @@ export const realWeddings = [
     title: 'Live Saxophonist Surprise for the First Dance',
     date: '2026-03-14',
     dateLabel: '14 March 2026',
-    heroImage: '/assets/images/gallery-sax-player.jpg',
+    heroImage: '/assets/images/gallery-sax-player.webp',
     summary: 'A wedding with guests from age 2 to 80+, a packed dancefloor all night, and a surprise live saxophonist during the couple\'s favourite dance.',
     tags: ['Live musicians', 'All-ages dancefloor', 'Saxophone'],
     review: {
@@ -23,7 +23,7 @@ export const realWeddings = [
     title: 'Country Western Wedding Bells with Ukrainian Touches',
     date: '2025-10-01',
     dateLabel: '1 October 2025',
-    heroImage: '/assets/images/gallery-tent-party.jpg',
+    heroImage: '/assets/images/gallery-tent-party.webp',
     summary: 'A country western themed wedding with beautiful Ukrainian elements woven through the music.',
     tags: ['Themed wedding', 'Country western', 'Cultural fusion'],
     review: {
@@ -41,7 +41,7 @@ export const realWeddings = [
     title: 'A Drum and Bass Wedding Dream',
     date: '2025-04-05',
     dateLabel: '5 April 2025',
-    heroImage: '/assets/images/gallery-blue-lasers.jpg',
+    heroImage: '/assets/images/gallery-blue-lasers.webp',
     summary: "Drum and bass ravers wanted a wedding that reflected their music. Every tune was a banger — dancefloor full all night.",
     tags: ['Drum and bass', 'Alternative wedding', 'Packed dancefloor'],
     review: {
@@ -59,7 +59,7 @@ export const realWeddings = [
     title: 'Rustic Barn Wedding with Challenging Requests',
     date: '2025-08-23',
     dateLabel: '23 August 2025',
-    heroImage: '/assets/images/gallery-rustic-setup.jpg',
+    heroImage: '/assets/images/gallery-rustic-setup.webp',
     summary: 'Our rustic DJ booth paired perfectly with a barn venue — and some deliberately challenging song requests got the dancefloor moving all night.',
     tags: ['Rustic barn', 'Rustic booth', 'Challenging requests'],
     review: {
@@ -77,7 +77,7 @@ export const realWeddings = [
     title: 'Setting the Place Alight',
     date: '2025-08-12',
     dateLabel: '12 August 2025',
-    heroImage: '/assets/images/gallery-green-lasers.jpg',
+    heroImage: '/assets/images/gallery-green-lasers.webp',
     summary: 'From initial brief through to final dance — guests buzzing, dancefloor full, a proper wedding party.',
     tags: ['Classic wedding', 'Energetic dancefloor'],
     review: {
@@ -95,7 +95,7 @@ export const realWeddings = [
     title: 'Full Day Coverage, Welcome Playlist to Last Dance',
     date: '2025-05-23',
     dateLabel: '23 May 2025',
-    heroImage: '/assets/images/gallery-bride-dancing.jpg',
+    heroImage: '/assets/images/gallery-bride-dancing.webp',
     summary: 'Complete all-day wraparound: arrival music, ceremony, speeches, breakfast soundtrack, evening party. Every part on point.',
     tags: ['All-day wraparound', 'Welcome playlist', 'Full coverage'],
     review: {
@@ -113,7 +113,7 @@ export const realWeddings = [
     title: 'Absolutely Superb from Start to Finish',
     date: '2025-08-24',
     dateLabel: '24 August 2025',
-    heroImage: '/assets/images/gallery-saxy-vibes.jpg',
+    heroImage: '/assets/images/gallery-saxy-vibes.webp',
     summary: 'Another wedding with the live saxophonist add-on — delivered to perfection.',
     tags: ['Live saxophone', 'Classic wedding'],
     review: {
@@ -131,7 +131,7 @@ export const realWeddings = [
     title: 'Reading a Mixed Crowd, 10/10',
     date: '2024-06-15',
     dateLabel: '15 June 2024',
-    heroImage: '/assets/images/gallery-first-dance.jpg',
+    heroImage: '/assets/images/gallery-first-dance.webp',
     summary: 'A very mixed crowd, a clear vision from the couple, and a DJ who read the room and kept everyone on the floor all night.',
     tags: ['Mixed crowd', 'Read the room', 'Live mixing'],
     review: {
@@ -149,7 +149,7 @@ export const realWeddings = [
     title: 'A Really Fun Evening of Music',
     date: '2025-04-19',
     dateLabel: '19 April 2025',
-    heroImage: '/assets/images/gallery-white-tent-setup.jpg',
+    heroImage: '/assets/images/gallery-white-tent-setup.webp',
     summary: "Everyone on the dance floor all night, loving it — exactly what the couple requested.",
     tags: ['Classic wedding', 'Packed dancefloor'],
     review: {
@@ -167,7 +167,7 @@ export const realWeddings = [
     title: 'Adaptable Genre Changes, Attentive Service',
     date: '2025-09-21',
     dateLabel: '21 September 2025',
-    heroImage: '/assets/images/gallery-castle-party.jpg',
+    heroImage: '/assets/images/gallery-castle-party.webp',
     summary: 'The couple changed the genre direction a couple of times in planning — open communication made it easy.',
     tags: ['Flexible planning', 'Genre changes'],
     review: {
@@ -185,7 +185,7 @@ export const realWeddings = [
     title: 'Just Let Them Set Up and Do Their Thing',
     date: '2025-07-05',
     dateLabel: '5 July 2025',
-    heroImage: '/assets/images/gallery-hotel-setup.jpg',
+    heroImage: '/assets/images/gallery-hotel-setup.webp',
     summary: 'Sometimes the best review is simply: we could relax and not worry about anything.',
     tags: ['Stress-free', 'Professional setup'],
     review: {
@@ -203,7 +203,7 @@ export const realWeddings = [
     title: 'A Super Relaxed Wedding, Perfectly Matched Music',
     date: '2025-08-26',
     dateLabel: 'August 2025',
-    heroImage: '/assets/images/gallery-laser-red.jpg',
+    heroImage: '/assets/images/gallery-laser-red.webp',
     summary: 'A relaxed wedding with song choices that perfectly matched the day\'s calm, informal mood.',
     tags: ['Relaxed wedding', 'Informal', 'Tailored playlist'],
     review: {

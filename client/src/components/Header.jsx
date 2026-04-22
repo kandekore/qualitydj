@@ -46,7 +46,7 @@ export default function Header() {
       <div className="header__inner">
         <Link to="/" className="header__logo">
           <img
-            src={isLightPage && !scrolled ? '/assets/brand/logo-dark.png' : '/assets/brand/logotrans.png'}
+            src={isLightPage && !scrolled ? '/assets/brand/logo-dark.webp' : '/assets/brand/logotrans.webp'}
             alt="Quality Wedding DJ"
           />
         </Link>

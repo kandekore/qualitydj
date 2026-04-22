@@ -14,7 +14,7 @@ export default function RealWeddings() {
 
       <section className="page-hero">
         <img
-          src="/assets/images/gallery-castle-party.jpg"
+          src="/assets/images/gallery-castle-party.webp"
           alt="Real weddings"
           className="page-hero__bg"
         />

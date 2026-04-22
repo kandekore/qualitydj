@@ -11,17 +11,17 @@ import './Home.css';
 const slides = [
   {
     video: '/assets/videos/freecompress-castle2-1-v2.mp4',
-    poster: '/assets/images/gallery-castle-party.jpg',
+    poster: '/assets/images/gallery-castle-party.webp',
     slogan: 'Elevate Your Wedding with Elegance',
   },
   {
     video: '/assets/videos/freecompress-tent2-3-v2.mp4',
-    poster: '/assets/images/gallery-white-tent-setup.jpg',
+    poster: '/assets/images/gallery-white-tent-setup.webp',
     slogan: 'Ready for a Night to Remember?',
   },
   {
     video: '/assets/videos/freecompress-conga2-v2.mp4',
-    poster: '/assets/images/gallery-bride-dancing.jpg',
+    poster: '/assets/images/gallery-bride-dancing.webp',
     slogan: 'Dance into Luxury with Me',
   },
 ];
@@ -118,22 +118,22 @@ const services = [
 ];
 
 const galleryItems = [
-  { img: '/assets/images/gallery-laser-red.jpg', title: 'Laser Show' },
-  { img: '/assets/images/gallery-sax-player.jpg', title: 'Saxy Vibes' },
-  { img: '/assets/images/gallery-castle-party.jpg', title: 'Castle Party' },
+  { img: '/assets/images/gallery-laser-red.webp', title: 'Laser Show' },
+  { img: '/assets/images/gallery-sax-player.webp', title: 'Saxy Vibes' },
+  { img: '/assets/images/gallery-castle-party.webp', title: 'Castle Party' },
   { img: '/assets/images/adobe/adobestock_1841384988.webp', title: 'Love Is Love' },
-  { img: '/assets/images/gallery-white-tent-setup.jpg', title: 'White Setup' },
-  { img: '/assets/images/gallery-rustic-setup.jpg', title: 'Rustic Booth' },
+  { img: '/assets/images/gallery-white-tent-setup.webp', title: 'White Setup' },
+  { img: '/assets/images/gallery-rustic-setup.webp', title: 'Rustic Booth' },
   { img: '/assets/images/adobe/adobestock_226243526.webp', title: 'Dry Ice Magic' },
-  { img: '/assets/images/gallery-bride-dancing.jpg', title: 'Bride Boogie' },
-  { img: '/assets/images/gallery-green-lasers.jpg', title: 'Green Lasers' },
+  { img: '/assets/images/gallery-bride-dancing.webp', title: 'Bride Boogie' },
+  { img: '/assets/images/gallery-green-lasers.webp', title: 'Green Lasers' },
   { img: '/assets/images/adobe/adobestock_417571252.webp', title: 'Cold Sparks' },
-  { img: '/assets/images/gallery-blue-lasers.jpg', title: 'Blue Lasers' },
-  { img: '/assets/images/gallery-hotel-setup.jpg', title: 'Hotel Setup' },
-  { img: '/assets/images/gallery-first-dance.jpg', title: 'First Dance' },
+  { img: '/assets/images/gallery-blue-lasers.webp', title: 'Blue Lasers' },
+  { img: '/assets/images/gallery-hotel-setup.webp', title: 'Hotel Setup' },
+  { img: '/assets/images/gallery-first-dance.webp', title: 'First Dance' },
   { img: '/assets/images/adobe/adobestock_1966018059.webp', title: 'Two Grooms' },
-  { img: '/assets/images/gallery-tent-party.jpg', title: 'Summer Tent' },
-  { img: '/assets/images/gallery-saxy-vibes.jpg', title: 'Saxy Performance' },
+  { img: '/assets/images/gallery-tent-party.webp', title: 'Summer Tent' },
+  { img: '/assets/images/gallery-saxy-vibes.webp', title: 'Saxy Performance' },
 ];
 
 const signatureMoments = [
@@ -314,7 +314,7 @@ export default function Home() {
                 <div className="hero__overlay" />
                 <div className="hero__content">
                   <img
-                    src="/assets/brand/hero-watermark.png"
+                    src="/assets/brand/hero-watermark.webp"
                     alt=""
                     className="hero__watermark"
                   />
@@ -342,7 +342,7 @@ export default function Home() {
           <div className="grid grid--2 installation__grid">
             <ScrollReveal>
               <div className="installation__image">
-                <img src="/assets/images/SIPX2521-wide.jpg" alt="Luxury white DJ installation" />
+                <img src="/assets/images/SIPX2521-wide.webp" alt="Luxury white DJ installation" loading="lazy" decoding="async" />
               </div>
             </ScrollReveal>
             <ScrollReveal>
@@ -445,7 +445,7 @@ export default function Home() {
       {/* "We provide premium sound systems" - split layout */}
       <section className="premium-section">
         <div className="premium-section__image">
-          <img src="/assets/images/white-rig-square.jpg" alt="Premium white DJ setup with Mr & Mrs signage" />
+          <img src="/assets/images/white-rig-square.webp" alt="Premium white DJ setup with Mr & Mrs signage" loading="lazy" decoding="async" />
         </div>
         <div className="premium-section__content">
           <ScrollReveal>
@@ -510,7 +510,7 @@ export default function Home() {
             {galleryItems.map((item, i) => (
               <ScrollReveal key={i}>
                 <div className="gallery-card">
-                  <img src={item.img} alt={item.title} />
+                  <img src={item.img} alt={item.title} loading="lazy" decoding="async" />
                   <div className="gallery-card__overlay">
                     <h3>{item.title}</h3>
                   </div>
@@ -540,6 +540,8 @@ export default function Home() {
                   <img
                     src={m.img}
                     alt={m.title}
+                    loading="lazy"
+                    decoding="async"
                     style={{ width: '100%', aspectRatio: '3/2', objectFit: 'cover' }}
                   />
                   <div style={{ padding: '1.75rem', background: 'var(--color-white)' }}>
