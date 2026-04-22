@@ -14,7 +14,7 @@ export const realWeddings = [
       quote: "From the moment we booked with Jan we couldn't have been happier. He was super kind and listened to what sort of music we wanted giving us great tips and ideas dependent on our interests and also thought about the age ranges of the people attending our event. Our event had age range from 2 years old to over 80s and the dance floor was filled the whole time! He even surprised us with a live saxophonist during our favourite dance; to say the evening was a great success is an understatement and it will be a life long memory for myself and my husband forever. I will always be grateful to his kindness and highly recommend his company.",
       reply: "What can I say Liv. I am so glad to have been able to play my little part in making your night go so well. The room was filled with love for you guys and it was a pleasure to have played.",
     },
-    story: "Olivia's wedding showcased one of the things we love most about mixing live — the ability to read a genuinely mixed room. Guests ranged from toddlers to grandparents, and we built a setlist that moved through the generations without ever losing the dancefloor. The real highlight was the live saxophonist we brought in to surprise the couple during their favourite track — a perfectly judged moment that turned into the memory the whole night was organised around.",
+    story: "Olivia's wedding showcased one of the things I love most about mixing live — the ability to read a genuinely mixed room. Guests ranged from toddlers to grandparents, and I built a setlist that moved through the generations without ever losing the dancefloor. The real highlight was the live saxophonist I brought in to surprise the couple during their favourite track — a perfectly judged moment that turned into the memory the whole night was organised around.",
     relatedServices: ['Live mixing', 'Live musicians add-on', 'Bespoke playlist consultation'],
   },
   {
@@ -50,7 +50,7 @@ export const realWeddings = [
       quote: 'We were after a little something different for our wedding as we are drum and bass ravers. Jan was our perfect match. He absolutely smashed it and we were on the dance floor all night. Every tune was a banger and we had the best time. Thank you so much.',
       reply: "Thanks Holli. Loved it. It was great to mix some quality Drum and Bass in at the end. You guys make a lovely couple. I've really enjoyed putting this together with you both.",
     },
-    story: "Most 'generic' wedding DJ services would politely suggest something more traditional. Holli and her partner wanted a wedding that reflected them — and they are drum and bass ravers. We built a set that respected the earlier parts of the day (ceremony, speeches, breakfast) with appropriate restraint, then dropped properly into the D&B they wanted for the evening. Every tune planned, every transition mixed live. When you stop trying to fit couples into a template and actually listen, this is what you get.",
+    story: "Most 'generic' wedding DJ services would politely suggest something more traditional. Holli and her partner wanted a wedding that reflected them — and they are drum and bass ravers. I built a set that respected the earlier parts of the day (ceremony, speeches, breakfast) with appropriate restraint, then dropped properly into the D&B they wanted for the evening. Every tune planned, every transition mixed live. When you stop trying to fit couples into a template and actually listen, this is what you get.",
     relatedServices: ['Live mixing', 'Alternative genre weddings', 'Bespoke soundtrack'],
   },
   {
@@ -60,7 +60,7 @@ export const realWeddings = [
     date: '2025-08-23',
     dateLabel: '23 August 2025',
     heroImage: '/assets/images/gallery-rustic-setup.webp',
-    summary: 'Our rustic DJ booth paired perfectly with a barn venue — and some deliberately challenging song requests got the dancefloor moving all night.',
+    summary: 'My rustic DJ booth paired perfectly with a barn venue — and some deliberately challenging song requests got the dancefloor moving all night.',
     tags: ['Rustic barn', 'Rustic booth', 'Challenging requests'],
     review: {
       rating: 5,
@@ -104,7 +104,7 @@ export const realWeddings = [
       quote: "We had the pleasure of having Jan be our DJ for the entire wedding day. From the welcome playlist to the party music. Everything played at the wedding was on point for each individual part of the day! Jan kept the guests on the feet and really in tune. We couldn't thank you enough for keeping the vibes coming and for catering for all that attended. The DJ set up was absolutely amazing and a perfect fit for any wedding! Perfectly styled! Thank you so much Mr and Mrs Edwards.",
       reply: "Loved it. A room full of love. A stunning bride and a real gentleman as the groom. A really lovely wedding.",
     },
-    story: "The Edwards wedding is the perfect example of why our All-Day Wraparound package exists. One DJ, one setup, one consistent thread running from the welcome playlist as guests arrived all the way through to the last dance. Each phase of the day had its own carefully planned soundtrack — you don't want the breakfast to feel like a nightclub or the evening to feel like a waiting room. This is the kind of seamless coverage that only comes from planning it as one arc, not three separate events.",
+    story: "The Edwards wedding is the perfect example of why my All-Day Wraparound package exists. One DJ, one setup, one consistent thread running from the welcome playlist as guests arrived all the way through to the last dance. Each phase of the day had its own carefully planned soundtrack — you don't want the breakfast to feel like a nightclub or the evening to feel like a waiting room. This is the kind of seamless coverage that only comes from planning it as one arc, not three separate events.",
     relatedServices: ['All-Day Wraparound package', 'Welcome playlist', 'Ceremony music'],
   },
   {
@@ -122,7 +122,7 @@ export const realWeddings = [
       quote: "Where do I begin, Jan and his team were absolutely superb from start to finish. They delivered everything they promised and it was to perfection!! I can't thank him enough for what he provided!! I highly recommend him for any party because he is absolutely brilliant.",
       reply: "Thanks so much Ieuan. It was a great evening and it was lovely to play with the Sax so much. You guys make such a lovely couple.",
     },
-    story: "Ieuan's wedding was another that featured our live saxophonist add-on — not as a one-off surprise but woven through multiple moments of the day. When you blend a sax player into live DJ mixing, the energy shift is remarkable: the crowd hears something that can't exist in a playlist, and it lifts the room every time.",
+    story: "Ieuan's wedding was another that featured my live saxophonist add-on — not as a one-off surprise but woven through multiple moments of the day. When you blend a sax player into live DJ mixing, the energy shift is remarkable: the crowd hears something that can't exist in a playlist, and it lifts the room every time.",
     relatedServices: ['Live saxophone add-on', 'Live mixing', 'Premium experience'],
   },
   {
@@ -140,7 +140,7 @@ export const realWeddings = [
       quote: "Jan at Let the Music Play created a brilliant atmosphere for our celebration. The crowd was very mixed, and somehow, he managed to cater to all. I had an idea of the music I wanted to hear, but Jan read the room and played the music needed to keep people on the dance floor all night. I highly recommend Let the Music Play for a wedding or any celebration. 10/10",
       reply: "Brill. Thanks Darren. It was a pleasure to be in a room with so much love evident. Really enjoyed the night.",
     },
-    story: "Reading the room is the skill that separates a professional live DJ from a playlist. Darren's wedding had a genuinely mixed crowd — different ages, different musical tastes, different expectations — and the brief was clear without being prescriptive. On the night, we balanced the couple's preferences with what the dancefloor was telling us, shifting gear as needed, never letting the floor empty.",
+    story: "Reading the room is the skill that separates a professional live DJ from a playlist. Darren's wedding had a genuinely mixed crowd — different ages, different musical tastes, different expectations — and the brief was clear without being prescriptive. On the night, I balanced the couple's preferences with what the dancefloor was telling me, shifting gear as needed, never letting the floor empty.",
     relatedServices: ['Live mixing', 'Reactive to dancefloor', 'Mixed genre weddings'],
   },
   {
@@ -158,7 +158,7 @@ export const realWeddings = [
       quote: 'Jan communicated well and delivered a really fun eve of music that we requested / wanted! Everyone was on the dance floor all night loving it!',
       reply: "Thank you so much. It was a pleasure to play for you. So much love in the room. I really enjoyed it.",
     },
-    story: "Good communication during planning is half the job. Jonny and Bea knew exactly what they wanted — we listened, built around that, and delivered it. No surprises, no deviation, just a really fun evening of music that matched what they asked for.",
+    story: "Good communication during planning is half the job. Jonny and Bea knew exactly what they wanted — I listened, built around that, and delivered it. No surprises, no deviation, just a really fun evening of music that matched what they asked for.",
     relatedServices: ['Clear planning process', 'Live mixing', 'Evening package'],
   },
   {
@@ -176,7 +176,7 @@ export const realWeddings = [
       quote: 'Great DJ, arrived with loads of time to set up and was very attentive for music requests and preferences. Open communication which was great as we changed the genre a couple of times. Had everyone up dancing and controlled the atmosphere amazingly. Would definitely recommend to anyone wanting an affordable with a quality service! Thank you Jan',
       reply: 'Thank you. Loved it. Could feel the love in the room for you guys. You make a stunning couple! Venue was lovely and your guests a pleasure to play for.',
     },
-    story: "Some couples know exactly what they want from the first conversation. Others evolve their thinking as the wedding approaches — and that's completely normal. Aaron's wedding changed musical direction a couple of times during planning, and because we treat planning as a conversation rather than a transaction, that was easy to accommodate. By the day itself everything was locked in, tested, and ready.",
+    story: "Some couples know exactly what they want from the first conversation. Others evolve their thinking as the wedding approaches — and that's completely normal. Aaron's wedding changed musical direction a couple of times during planning, and because I treat planning as a conversation rather than a transaction, that was easy to accommodate. By the day itself everything was locked in, tested, and ready.",
     relatedServices: ['Flexible planning', 'Advance preparation', 'Clear communication'],
   },
   {
